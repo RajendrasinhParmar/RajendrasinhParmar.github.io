@@ -1,0 +1,13 @@
+{
+  "areFoldersHidden": true,
+  "matchCaseInsensitive": true,
+  "attachmentFolderNames": [
+    "dist",
+    "node_modules",
+    "src/components",
+    "src/layouts",
+    "src/pages",
+    "src/styles",
+    "src/utils"
+  ]
+}

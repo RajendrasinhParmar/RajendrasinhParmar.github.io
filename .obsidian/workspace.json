@@ -1,0 +1,201 @@
+{
+  "main": {
+    "id": "2e7832a20a6eaa8a",
+    "type": "split",
+    "children": [
+      {
+        "id": "6b6c93c9075d389c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "07d17be3eb8ac473",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "src/content/blog/file-permissions-for-ssh-setup.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "79e9d53468da4cd5",
+    "type": "split",
+    "children": [
+      {
+        "id": "97c0bbbabb5fa2a2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2023ae4a43e7c9f0",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "09851dced46bb73a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "809cdc5ec1658e33",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 429.5
+  },
+  "right": {
+    "id": "079e6266523f977e",
+    "type": "split",
+    "children": [
+      {
+        "id": "1cc388d59f29ec79",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8c2c8ef1b908695c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "src/content/blog/file-permissions-for-ssh-setup.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "9e0d964f1f899cf1",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "src/content/blog/file-permissions-for-ssh-setup.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "9b10665e33bc2c64",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "ff6f3e702eb888ed",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "src/content/blog/file-permissions-for-ssh-setup.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "templater-obsidian:Templater": false,
+      "hide-folders:Show hidden folders": false
+    }
+  },
+  "active": "07d17be3eb8ac473",
+  "lastOpenFiles": [
+    "dist/_jampack",
+    "dist/sitemap-index.xml",
+    "dist/sitemap-0.xml",
+    "dist/404.html",
+    "dist/tags/ssh/index.html",
+    "dist/tags/ssh",
+    "dist/tags/filepermissions/index.html",
+    "dist/tags/filepermissions",
+    "dist/tags/index.html",
+    "dist/tags",
+    "dist/posts/1/index.html",
+    "dist/posts/file-permissions-for-ssh-setup.png",
+    "dist/og.png",
+    "dist/_astro/AstroPaper-v3.LmlvKs0h.png",
+    "dist/favicon.svg",
+    "dist/astropaper-og.jpg",
+    "dist/assets/logo.svg",
+    "dist/assets/logo.png",
+    "dist/assets/forrest-gump-quote.webp",
+    "dist/assets/dev.svg",
+    "src/content/blog/terminal-development.md",
+    "src/content/blog/tailwind-typography.md",
+    "src/content/blog/predefined-color-schemes.md",
+    "src/content/blog/portfolio-website-development.md",
+    "src/content/blog/open-source-software-(oss).md",
+    "src/content/blog/how-to-update-dependencies.md",
+    "src/content/blog/how-to-connect-astro-paper-blog-with-forestry-cms.md",
+    "src/content/blog/how-to-configure-astropaper-theme.md",
+    "src/content/blog/how-to-add-an-estimated-reading-time.md",
+    "src/content/blog/git-aliases-i-use.md",
+    "src/content/blog/file-permissions-for-ssh-setup.md",
+    "src/content/blog/example-draft-post.md",
+    "src/content/blog/dynamic-og-images.md",
+    "src/content/blog/customizing-astropaper-theme-color-schemes.md",
+    "src/content/blog/before-starting-the-aws-learning-journey.md",
+    "src/content/blog/aws-iam-policy.md",
+    "src/content/blog/aws-iam.md",
+    "src/content/blog/astro-paper-3.md",
+    "src/content/blog/astro-paper-2.md",
+    "src/content/blog/adding-new-post.md",
+    "SETUP.md",
+    "dist/assets/dev.svg.svg",
+    "README.md",
+    "obsidian-templates/post.md",
+    "src/pages/about.md",
+    "src/content/blog/docker-iptable.md"
+  ]
+}

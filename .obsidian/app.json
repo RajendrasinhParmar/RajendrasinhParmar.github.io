@@ -1,0 +1,13 @@
+{
+  "userIgnoreFilters": [
+    "node_modules/",
+    "obsidian-templates/",
+    "public/",
+    "dist/"
+  ],
+  "attachmentFolderPath": "src/assets/images",
+  "alwaysUpdateLinks": true,
+  "showLineNumber": true,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "src/content/blog"
+}
