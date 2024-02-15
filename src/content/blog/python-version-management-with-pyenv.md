@@ -177,7 +177,7 @@ $ pyenv versions
 ### Set global python version
 
 ```sh
-$ python global 3.10.0
+$ pyenv global 3.10.0
 ```
 
 ### Set local python version for project development
