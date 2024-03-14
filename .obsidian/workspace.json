@@ -4,16 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "3098b8d237577340",
+        "id": "3a5eb733bf888e87",
         "type": "tabs",
         "children": [
           {
-            "id": "0eb87124ea549d76",
+            "id": "45895104edd924df",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/blog/docker-fails-to-connect-to-internet.md",
+                "file": "src/content/blog/websocket-with-nginx.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ecf353f982503e9a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a66a0b8e2150001f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "src/content/blog/python-version-management-with-pyenv.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -70,7 +89,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 308.5
+    "width": 308.5,
+    "collapsed": true
   },
   "right": {
     "id": "079e6266523f977e",
@@ -86,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "src/content/blog/docker-fails-to-connect-to-internet.md",
+                "file": "src/content/blog/websocket-with-nginx.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "src/content/blog/docker-fails-to-connect-to-internet.md",
+                "file": "src/content/blog/websocket-with-nginx.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "src/content/blog/docker-fails-to-connect-to-internet.md"
+                "file": "src/content/blog/websocket-with-nginx.md"
               }
             }
           }
@@ -149,8 +169,14 @@
       "hide-folders:Show hidden folders": false
     }
   },
-  "active": "0eb87124ea549d76",
+  "active": "45895104edd924df",
   "lastOpenFiles": [
+    "src/content/blog/python-version-management-with-pyenv.md",
+    "src/content/blog/websocket-with-nginx.md",
+    "src/content/blog/portfolio-website-development.md",
+    "src/content/blog/how-to-update-dependencies.md",
+    "obsidian-templates/post.md",
+    "src/content/Untitled.md",
     "src/assets/images/dns-configuration-ubuntu.png",
     "src/content/blog/docker-fails-to-connect-to-internet.md",
     "src/content/blog/file-permissions-for-ssh-setup.md",
@@ -172,7 +198,6 @@
     "public/assets/site.webmanifest",
     "favicon.ico",
     "site.webmanifest",
-    "src/content/blog/python-version-management-with-pyenv.md",
     "CNAME",
     "dist/_jampack",
     "dist/sitemap-index.xml",
@@ -180,9 +205,7 @@
     "src/content/blog/terminal-development.md",
     "src/content/blog/tailwind-typography.md",
     "src/content/blog/predefined-color-schemes.md",
-    "src/content/blog/portfolio-website-development.md",
     "src/content/blog/open-source-software-(oss).md",
-    "src/content/blog/how-to-update-dependencies.md",
     "src/content/blog/how-to-connect-astro-paper-blog-with-forestry-cms.md",
     "src/content/blog/how-to-configure-astropaper-theme.md",
     "src/content/blog/git-aliases-i-use.md",
@@ -192,9 +215,6 @@
     "src/content/blog/aws-iam.md",
     "src/content/blog/astro-paper-3.md",
     "src/content/blog/astro-paper-2.md",
-    "src/content/blog/adding-new-post.md",
-    "SETUP.md",
-    "README.md",
-    "obsidian-templates/post.md"
+    "src/content/blog/adding-new-post.md"
   ]
 }
