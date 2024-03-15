@@ -51,12 +51,12 @@ upstream backend-rest1 {
 	server apisvc1:8000;
 }
 
-upstream backend-rest2 {
+upstream backend-common {
 	server apicommon:8001;
 }
 ```
 
-- In the example above we've defined two upstream servers `backend-rest1` and `backend-rest2`.
+- In the example above we've defined two upstream servers `backend-rest1` and `backend-common`.
 - This code clock will be used in server block configuration
 
 ### Server Block setup
@@ -75,7 +75,7 @@ server {
 	}
 
 	location /apiv2/ {
-		proxy_pass http://backend-rest2;
+		proxy_pass http://backend-common;
 		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 		proxy_set_header Host $host;
 	}
@@ -86,7 +86,7 @@ server {
 }
 ```
 
-The above block of configuration will listen on `Port 80` of `localhost` and any request coming to the endpoint `/apiv1` will be forwarded to `backend-rest1` and requests coming to the endpoint `/apiv2` will be forwarded to `backend-rest2`.
+The above block of configuration will listen on `Port 80` of `localhost` and any request coming to the endpoint `/apiv1` will be forwarded to `backend-rest1` and requests coming to the endpoint `/apiv2` will be forwarded to `backend-common`.
 Any Other request not matching with these 2 routes will go to the final default block.
 
 ### Complete configuration
@@ -98,7 +98,7 @@ upstream backend-rest1 {
 	server apirest1:8000;
 }
 
-upstream backend-rest2 {
+upstream backend-common {
 	server apicommon:8001;
 }
 
@@ -113,7 +113,7 @@ server {
 	}
 
 	location /apiv2/ {
-		proxy_pass http://backend-rest2;
+		proxy_pass http://backend-common;
 		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 		proxy_set_header Host $host;
 	}
@@ -134,11 +134,11 @@ If we try to connect to the WebSocket with the above configuration, we will get 
 
 To enable the WebSocket connection to pass through the Nginx proxy, we need to explicitly configure the location block that allows the WebSocket connection to go to the backend service.
 
-To do that we will need to set the `http_upgrade` header for the request and also need to update the version of http to 1.1
+To do that we will need to set the `http_upgrade` header for the request and also need to update the version of HTTP to 1.1
 
 ```nginx
 location /ws/ {
-	proxy_pass http://apicommon;
+	proxy_pass http://backend-common;
 	proxy_http_version 1.1;
 	proxy_set_header Upgrade $http_upgrade;
 	proxy_set_header Connection "Upgrade";
@@ -146,7 +146,7 @@ location /ws/ {
 }
 ```
 
-All the requests coming to `/ws/` will be upgraded and forwarded to the `apicommon` server where our WebSocket endpoint is implemented. This above code block can be placed just above the final catch-call route.
+All the requests coming to `/ws/` will be upgraded and forwarded to the `backend-common` server where our WebSocket endpoint is implemented. This above code block can be placed just above the final catch-call route.
 
 ## Conclusion
 
