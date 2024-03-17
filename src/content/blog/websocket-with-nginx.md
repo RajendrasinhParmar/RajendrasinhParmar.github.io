@@ -57,7 +57,7 @@ upstream backend-common {
 ```
 
 - In the example above we've defined two upstream servers `backend-rest1` and `backend-common`.
-- This code clock will be used in server block configuration
+- This code block will be used in server block configuration
 
 ### Server Block setup
 
