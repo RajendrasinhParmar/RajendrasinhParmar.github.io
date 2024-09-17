@@ -28,7 +28,7 @@ Large Language Models (LLMs) are powerful tools for natural language processing 
 
 Fine-tuning is a common way to upgrade LLMs. It involves training the model on a specific dataset to improve its performance on a particular task. For example, if you have an LLM that is trained on a general language model, you can fine-tune it on a dataset of medical texts to improve its performance on medical-related tasks. Fine-tuning allows you to adapt the model to a specific domain or task, improving its accuracy and performance. Fine tuning is also known as transfer learning.
 
-Fine-tuning is resource-intensive and requires a large amount of labeled data. However, it is an effective way to upgrade LLMs and improve their performance on specific tasks.
+Fine-tuning is resource-intensive and requires a large amount of labelled data. However, it is an effective way to upgrade LLMs and improve their performance on specific tasks.
 
 ### Scaling
 
@@ -38,7 +38,7 @@ Scaling is resource-intensive and requires powerful hardware and large amounts o
 
 ### Distillation
 
-Distillation is a technique that transfers knowledge from a large model to a smaller one. This allows you to reduce the computational requirements of the model while maintaining its performance. For example, you can train a large LLM on a dataset and then distill its knowledge into a smaller model that can be deployed on a mobile device.
+Distillation is a technique that transfers knowledge from a large model to a smaller one. This allows you to reduce the computational requirements of the model while maintaining its performance. For example, you can train a large LLM on a dataset and then distil its knowledge into a smaller model that can be deployed on a mobile device.
 
 Distillation is an effective way to upgrade LLMs and reduce their computational requirements. It allows you to deploy powerful language models on devices with limited computational resources.
 
