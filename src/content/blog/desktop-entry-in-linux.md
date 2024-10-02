@@ -4,7 +4,7 @@ description: Create a desktop entry in Linux to launch applications
 pubDatetime: 2024-10-02T22:15:04+05:30
 postSlug: desktop-entry-in-Linux
 featured: false
-draft: true
+draft: false
 tags: [linux]
 ---
 
