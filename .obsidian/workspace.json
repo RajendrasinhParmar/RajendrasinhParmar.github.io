@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "3a5eb733bf888e87",
+        "id": "7bd7307a7a08f685",
         "type": "tabs",
         "children": [
           {
-            "id": "45895104edd924df",
+            "id": "c0ca2775e27254e4",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -17,7 +17,9 @@
                 "mode": "source",
                 "backlinks": true,
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "websocket-with-nginx"
             }
           }
         ]
@@ -40,7 +42,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -55,7 +59,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -63,15 +69,16 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 308.5,
-    "collapsed": true
+    "width": 523.5
   },
   "right": {
     "id": "079e6266523f977e",
@@ -87,7 +94,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "src/content/blog/websocket-with-nginx.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +101,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
             }
           },
           {
@@ -104,10 +112,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "src/content/blog/websocket-with-nginx.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
             }
           },
           {
@@ -118,7 +127,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -126,9 +137,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "src/content/blog/websocket-with-nginx.md"
-              }
+              "state": {},
+              "icon": "lucide-list",
+              "title": "Outline"
             }
           }
         ]
@@ -150,52 +161,53 @@
       "hide-folders:Show hidden folders": false
     }
   },
-  "active": "45895104edd924df",
+  "active": "c0ca2775e27254e4",
   "lastOpenFiles": [
-    "src/content/blog/python-version-management-with-pyenv.md",
-    "src/content/blog/websocket-with-nginx.md",
-    "src/content/blog/portfolio-website-development.md",
-    "src/content/blog/how-to-update-dependencies.md",
-    "obsidian-templates/post.md",
-    "src/content/Untitled.md",
-    "src/assets/images/dns-configuration-ubuntu.png",
-    "src/content/blog/docker-fails-to-connect-to-internet.md",
-    "src/content/blog/file-permissions-for-ssh-setup.md",
-    "src/content/blog/dynamic-og-images.md",
-    "src/content/blog/how-to-add-an-estimated-reading-time.md",
-    "src/content/blog/example-draft-post.md",
-    "public/android-chrome-192x192.png",
-    "public/android-chrome-512x512.png",
-    "public/apple-touch-icon.png",
-    "public/favicon.ico",
-    "public/favicon-16x16.png",
-    "public/favicon-32x32.png",
-    "public/site.webmanifest",
-    "public/assets/android-chrome-192x192.png",
-    "public/assets/android-chrome-512x512.png",
-    "public/assets/apple-touch-icon.png",
-    "public/assets/favicon.ico",
-    "public/assets/favicon-16x16.png",
-    "public/assets/site.webmanifest",
-    "favicon.ico",
-    "site.webmanifest",
-    "CNAME",
-    "dist/_jampack",
-    "dist/sitemap-index.xml",
-    "dist/sitemap-0.xml",
-    "src/content/blog/terminal-development.md",
     "src/content/blog/tailwind-typography.md",
-    "src/content/blog/predefined-color-schemes.md",
-    "src/content/blog/open-source-software-(oss).md",
-    "src/content/blog/how-to-connect-astro-paper-blog-with-forestry-cms.md",
+    "src/content/blog/websocket-with-nginx.md",
     "src/content/blog/how-to-configure-astropaper-theme.md",
-    "src/content/blog/git-aliases-i-use.md",
-    "src/content/blog/customizing-astropaper-theme-color-schemes.md",
+    "src/content/blog/how-to-add-an-estimated-reading-time.md",
+    "src/content/blog/extend-volume-associated-with-ubuntu-ec2-instance.md",
+    "src/content/blog/example-draft-post.md",
+    "src/assets/images/openai.jpg",
+    "src/content/blog/use-predicted-outputs-with-openai.md",
+    "src/assets/images/openai.jpg.crdownload",
+    "src/content/blog/docker-desktop-not-starting-in-ubuntu-24.04-lts.md",
+    "src/content/blog/docker-desktop-issue-with-ubuntu-24.04-lts.md",
+    "src/content/blog/docker-fails-to-connect-to-internet.md",
+    "src/content/blog/useful-linux-commands.md",
+    "src/content/blog/optimize-memory-management-with-dynamic-swap-in-ubuntu.md",
+    "src/content/blog/how-to-connect-astro-paper-blog-with-forestry-cms.md",
+    "src/content/blog/how-to-update-dependencies.md",
+    "src/content/blog/meta-ai-releases-new-quantized-versions-of-llama-3.2(1b-&-3b).md",
+    "src/content/blog/nextjs-conf24-keynotes.md",
+    "src/content/blog/notebookllama-an-open-source-version-of-notebooklm.md",
+    "src/content/blog/python-version-management-with-pyenv.md",
+    "src/content/blog/desktop-entry-in-linux.md",
+    "src/content/blog/keyboard-mapping-in-linux-with-xmodmap.md",
+    "src/content/blog/omniparser-for-pure-vision-based-gui-agent.md",
+    "src/assets/images/OmniParser_performance_fig2_1400px-1024x683.png",
+    "src/assets/images/OmniParser_performance_fig1_1400px-1024x683.png",
+    "src/assets/images/NotebookLlama.jpg",
+    "src/assets/images/NotebookLlama.jpg.crdownload",
+    "src/assets/images/llama-3.2-performance.png",
     "src/content/blog/before-starting-the-aws-learning-journey.md",
     "src/content/blog/aws-iam-policy.md",
     "src/content/blog/aws-iam.md",
-    "src/content/blog/astro-paper-3.md",
-    "src/content/blog/astro-paper-2.md",
-    "src/content/blog/adding-new-post.md"
+    "src/assets/images/llama_3.2_quantized.png",
+    "src/assets/images/nextjs-versioned-docs.png",
+    "src/assets/images/nextjs-dev-tests.png",
+    "src/assets/images/nextjs-build-tests.png",
+    "src/assets/images/nextjs-conf24-ticket.png",
+    "package.json.1917381294",
+    "pnpm-lock.yaml.3250687135",
+    "_tmp_22941_b747d8137df0b0145e704df7119db9c1",
+    "package.json.321810586",
+    "pnpm-lock.yaml.1366433093",
+    "_tmp_22754_880b9ce3b0b834dd8883da8e091c98e4",
+    "src/content/blog/a-custom-decorator-for-retry-in-python.md",
+    "src/content/blog/git-aliases-i-use.md",
+    "_tmp_37999_dbcd3c659c9110d5d61e8b69dc7a3085",
+    "package.json.3438530148"
   ]
 }
