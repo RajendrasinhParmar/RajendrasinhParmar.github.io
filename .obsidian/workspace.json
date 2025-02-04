@@ -4,22 +4,31 @@
     "type": "split",
     "children": [
       {
-        "id": "7bd7307a7a08f685",
+        "id": "7c5572f9a3f29c6d",
         "type": "tabs",
         "children": [
           {
-            "id": "c0ca2775e27254e4",
+            "id": "b1a94311c7b16090",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/blog/websocket-with-nginx.md",
+                "file": "src/content/blog/corepack-failing-for-pnpm-install.md",
                 "mode": "source",
+                "source": false,
                 "backlinks": true,
-                "source": false
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
               },
               "icon": "lucide-file",
-              "title": "websocket-with-nginx"
+              "title": "corepack-failing-for-pnpm-install"
             }
           }
         ]
@@ -41,7 +50,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -161,8 +171,34 @@
       "hide-folders:Show hidden folders": false
     }
   },
-  "active": "c0ca2775e27254e4",
+  "active": "b1a94311c7b16090",
   "lastOpenFiles": [
+    "package.json.1543375292",
+    "pnpm-lock.yaml.2968515719",
+    "_tmp_17513_c8ae87854dc8420b9a6f6eea95eeb1cd",
+    "package.json.991549057",
+    "pnpm-lock.yaml.4085318165",
+    "_tmp_17313_12edc088070a7beff5e2d92749070d57",
+    "src/assets/images/docker_corepack.webp",
+    "src/content/blog/meta-ai-releases-new-quantized-versions-of-llama-3.2(1b-&-3b).md",
+    "src/content/blog/keyboard-mapping-in-linux-with-xmodmap.md",
+    "src/content/blog/extend-volume-associated-with-ubuntu-ec2-instance.md",
+    "src/content/blog/file-permissions-for-ssh-setup.md",
+    "src/content/blog/docker-fails-to-connect-to-internet.md",
+    "src/content/blog/docker-desktop-not-starting-in-ubuntu-24.04-lts.md",
+    "src/content/blog/desktop-entry-in-linux.md",
+    "src/content/blog/corepack-failing-for-pnpm-install.md",
+    "public/docker_corepack.webp.crdownload",
+    "src/content/blog/nextjs-conf24-keynotes.md",
+    "obsidian-templates/random-pic.md",
+    "obsidian-templates/post.md",
+    "src/content/blog/common-ways-to-upgrade-llm.md",
+    "src/content/blog/context-managers-in-python.md",
+    "src/content/blog/the-richest-man-in-babylon.md",
+    "src/content/blog/The-India-Way.md",
+    "src/content/blog/the-midnight-library.md",
+    "src/content/blog/websocket-with-nginx.md",
+    "_tmp_14349_c0bb45248a1c324e4d95ad997adb4331",
     "dist/_astro/llama_3.2_quantized.2Q4wIuQv_ZAtr6R@1020w.webp",
     "dist/_astro/llama_3.2_quantized.2Q4wIuQv_ZAtr6R@1320w.webp",
     "dist/_astro/llama_3.2_quantized.2Q4wIuQv_ZAtr6R@1620w.webp",
@@ -175,39 +211,13 @@
     "dist/_astro/nextjs-build-tests.CjniAtqV_Zrydqz.webp",
     "dist/_astro/nextjs-dev-tests.GlVosELJ_1FIo20.webp",
     "dist/_astro/nextjs-conf24-ticket.B-tG3QbJ_Zz88OB.webp",
-    "dist/_astro/llama-3.2-performance.B8kp6KkK_Z1gt9GU.webp",
-    "dist/_astro/llama_3.2_quantized.2Q4wIuQv_ZAtr6R.webp",
-    "dist/index.html",
-    "dist/tags/index.html",
-    "dist/tags/ubuntu/index.html",
-    "dist/tags/ubuntu",
-    "dist/tags/terminal/index.html",
-    "dist/tags/terminal",
-    "dist/tags/ssh/index.html",
     "src/content/blog/tailwind-typography.md",
-    "src/content/blog/websocket-with-nginx.md",
     "src/content/blog/how-to-configure-astropaper-theme.md",
     "src/content/blog/how-to-add-an-estimated-reading-time.md",
-    "src/content/blog/extend-volume-associated-with-ubuntu-ec2-instance.md",
     "src/content/blog/example-draft-post.md",
     "src/content/blog/use-predicted-outputs-with-openai.md",
-    "src/content/blog/docker-desktop-not-starting-in-ubuntu-24.04-lts.md",
     "src/content/blog/docker-desktop-issue-with-ubuntu-24.04-lts.md",
-    "src/content/blog/docker-fails-to-connect-to-internet.md",
     "src/content/blog/useful-linux-commands.md",
-    "src/content/blog/optimize-memory-management-with-dynamic-swap-in-ubuntu.md",
-    "src/content/blog/how-to-connect-astro-paper-blog-with-forestry-cms.md",
-    "src/content/blog/how-to-update-dependencies.md",
-    "src/content/blog/meta-ai-releases-new-quantized-versions-of-llama-3.2(1b-&-3b).md",
-    "src/content/blog/nextjs-conf24-keynotes.md",
-    "src/content/blog/notebookllama-an-open-source-version-of-notebooklm.md",
-    "src/content/blog/python-version-management-with-pyenv.md",
-    "src/content/blog/desktop-entry-in-linux.md",
-    "src/content/blog/keyboard-mapping-in-linux-with-xmodmap.md",
-    "src/content/blog/omniparser-for-pure-vision-based-gui-agent.md",
-    "src/content/blog/before-starting-the-aws-learning-journey.md",
-    "src/content/blog/aws-iam-policy.md",
-    "src/content/blog/aws-iam.md",
-    "src/content/blog/a-custom-decorator-for-retry-in-python.md"
+    "src/content/blog/optimize-memory-management-with-dynamic-swap-in-ubuntu.md"
   ]
 }
