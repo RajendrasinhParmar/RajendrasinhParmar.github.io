@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/blog/corepack-failing-for-pnpm-install.md",
+                "file": "src/content/blog/the-richest-man-in-babylon.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "corepack-failing-for-pnpm-install"
+              "title": "the-richest-man-in-babylon"
             }
           }
         ]
@@ -88,7 +88,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 523.5
+    "width": 523.5,
+    "collapsed": true
   },
   "right": {
     "id": "079e6266523f977e",
@@ -173,6 +174,7 @@
   },
   "active": "b1a94311c7b16090",
   "lastOpenFiles": [
+    "src/content/blog/corepack-failing-for-pnpm-install.md",
     "package.json.1543375292",
     "pnpm-lock.yaml.2968515719",
     "_tmp_17513_c8ae87854dc8420b9a6f6eea95eeb1cd",
@@ -187,7 +189,6 @@
     "src/content/blog/docker-fails-to-connect-to-internet.md",
     "src/content/blog/docker-desktop-not-starting-in-ubuntu-24.04-lts.md",
     "src/content/blog/desktop-entry-in-linux.md",
-    "src/content/blog/corepack-failing-for-pnpm-install.md",
     "public/docker_corepack.webp.crdownload",
     "src/content/blog/nextjs-conf24-keynotes.md",
     "obsidian-templates/random-pic.md",
@@ -204,7 +205,6 @@
     "dist/_astro/llama_3.2_quantized.2Q4wIuQv_ZAtr6R@1620w.webp",
     "dist/_jampack",
     "dist/sitemap-0.xml",
-    "dist/sitemap-index.xml",
     "dist/_astro/OmniParser_performance_fig2_1400px-1024x683.D0sgwDSl_s0me9.webp",
     "dist/_astro/OmniParser_performance_fig1_1400px-1024x683.20Y1Z9zc_YMofz.webp",
     "dist/_astro/nextjs-versioned-docs.DsfIwssC_1NRiDY.webp",
