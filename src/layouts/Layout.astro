@@ -28,7 +28,7 @@ const socialImageURL = new URL(
 ---
 
 <!doctype html>
-<html lang=`${LOCALE.lang ?? "en"}`>
+<html lang={`${LOCALE.lang ?? "en"}`}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -81,6 +81,20 @@ const socialImageURL = new URL(
     <script is:inline src="/toggle-theme.js"></script>
   </head>
   <body>
-    <slot />
+    <div class="layout-container">
+      <slot name="sidebar" />
+      <div class="main-content">
+        <slot />
+      </div>
+    </div>
   </body>
 </html>
+
+<style>
+  .layout-container {
+    @apply flex min-h-screen;
+  }
+  .main-content {
+    @apply flex-1;
+  }
+</style>

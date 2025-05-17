@@ -10,16 +10,22 @@ import Socials from "@components/Socials.astro";
 import Tag from "@components/Tag.astro";
 import getSortedPosts from "@utils/getSortedPosts";
 import getUniqueTags from "@utils/getUniqueTags";
+import getSortedBooks from "@utils/getSortedBooks";
 import slugify from "@utils/slugify";
 import { SOCIALS } from "@config";
 
 const posts = await getCollection("blog");
+const books = await getCollection("book");
 
 const sortedPosts = getSortedPosts(posts);
+const sortedBooks = getSortedBooks(books);
 // const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 
 const socialCount = SOCIALS.filter(social => social.active).length;
-let tags = getUniqueTags(posts);
+
+// Separate tags for posts and books
+const postTags = getUniqueTags(posts);
+const bookTags = getUniqueTags([], books);
 ---
 
 <Layout>
@@ -65,42 +71,6 @@ let tags = getUniqueTags(posts);
 
     <Hr />
 
-    {
-      tags.length > 0 && (
-        <>
-          <section id="tags">
-            <h2>Tags</h2>
-            <ul>
-              {tags.map(tag => (
-                <Tag name={tag} size="sm" />
-              ))}
-            </ul>
-          </section>
-          <Hr />
-        </>
-      )
-    }
-
-    <!-- {
-      featuredPosts.length > 0 && (
-        <>
-          <section id="featured">
-            <h2>Featured</h2>
-            <ul>
-              {featuredPosts.map(({ data }) => (
-                <Card
-                  href={`/posts/${slugify(data)}`}
-                  frontmatter={data}
-                  secHeading={false}
-                />
-              ))}
-            </ul>
-          </section>
-          <Hr />
-        </>
-      )
-    } -->
-
     <section id="recent-posts">
       <h2>Recent Posts</h2>
       <ul>
@@ -129,6 +99,62 @@ let tags = getUniqueTags(posts);
           </svg>
         </LinkButton>
       </div>
+    </section>
+
+    <Hr />
+
+    <section id="recent-books">
+      <h2>Recent Books</h2>
+      <ul>
+        {
+          sortedBooks
+            .map(
+              ({ data }, index) =>
+                index < 4 && (
+                  <Card
+                    href={`/books/${slugify(data)}`}
+                    frontmatter={data}
+                    secHeading={false}
+                  />
+                )
+            )
+        }
+      </ul>
+      <div class="all-posts-btn-wrapper">
+        <LinkButton href="/books">
+          All Books
+          <svg xmlns="http://www.w3.org/2000/svg"
+            ><path
+              d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
+            ></path>
+          </svg>
+        </LinkButton>
+      </div>
+    </section>
+
+    <Hr />
+
+    <section id="tags">
+      {postTags.length > 0 && (
+        <div class="tag-section">
+          <h2>Tech Tags</h2>
+          <ul>
+            {postTags.map((tag: string) => (
+              <Tag name={tag} size="sm" />
+            ))}
+          </ul>
+        </div>
+      )}
+      {bookTags.length > 0 && (
+        <div class="tag-section">
+          <h2>Book Tags</h2>
+          <ul>
+            {bookTags.map((tag: string) => (
+              <Tag name={tag} size="sm" />
+            ))}
+          </ul>
+        </div>
+      )}
     </section>
   </main>
 
@@ -162,20 +188,33 @@ let tags = getUniqueTags(posts);
   /* ===== Featured & Recent Posts Sections ===== */
   #featured,
   #recent-posts,
-  #tags {
+  #recent-books {
     @apply py-6;
   }
   #featured h2,
   #recent-posts h2,
-  #tags h2 {
+  #recent-books h2 {
     @apply text-2xl font-semibold tracking-wide;
-  }
-
-  #tags h2 {
-    @apply mb-6;
   }
 
   .all-posts-btn-wrapper {
     @apply my-8 text-center;
+  }
+
+  /* ===== Tags Section ===== */
+  #tags {
+    @apply py-6;
+  }
+  .tag-section {
+    @apply mb-8;
+  }
+  .tag-section:last-child {
+    @apply mb-0;
+  }
+  .tag-section h2 {
+    @apply text-lg font-semibold mb-3;
+  }
+  .tag-section ul {
+    @apply flex flex-wrap gap-2;
   }
 </style>
