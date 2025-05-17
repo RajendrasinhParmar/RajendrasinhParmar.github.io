@@ -7,10 +7,19 @@ featured: false
 draft: true
 tags:
   - bookreview
-author: Matt Haig
+  - english
+  - fiction
+  - science fiction
+  - fantasy
+bookAuthor: Matt Haig
+rating: 4
+genre:
+  - fiction
+  - science fiction
+  - fantasy
 ---
 
-![photo by Finding Dan | Dan Grinwis(https://unsplash.com/@finding_dan?utm_source=templater_proxy&utm_medium=referral) on Unsplash](https://images.unsplash.com/photo-1506773090264-ac0b07293a64?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2NDU1OTF8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzY2MjQ3NDl8&ixlib=rb-4.0.3&q=85&w=900&h=300)
+<img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1609973366i/56578056.jpg" style="height: 450px;" alt="The Midnight Library Book cover">
 
 A Book Review of "The Midnight Library"
 

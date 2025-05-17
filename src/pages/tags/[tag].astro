@@ -10,17 +10,18 @@ import getPostsByTag from "@utils/getPostsByTag";
 import slugify from "@utils/slugify";
 import { SITE } from "@config";
 import getSortedPosts from "@utils/getSortedPosts";
-import { filterPostByDraft } from "@utils/common";
-
+import getSortedBooks from "@utils/getSortedBooks";
+import { filterPostByDraft, filterBookByDraft } from "@utils/common";
+import getBooksByTag from "@utils/getBooksByTag";
 export interface Props {
-  post: CollectionEntry<"blog">;
+  post: CollectionEntry<"blog" | "book">;
   tag: string;
 }
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
-
-  const tags = getUniqueTags(posts);
+  const books = await getCollection("book");
+  const tags = getUniqueTags(posts, books);
 
   return tags.map(tag => {
     return {
@@ -33,10 +34,13 @@ export async function getStaticPaths() {
 const { tag } = Astro.props;
 
 const posts = await getCollection("blog", filterPostByDraft);
+const books = await getCollection("book", filterBookByDraft);
 
 const tagPosts = getPostsByTag(posts, tag);
+const tagBooks = getBooksByTag(books, tag);
 
 const sortTagsPost = getSortedPosts(tagPosts);
+const sortTagsBooks = getSortedBooks(tagBooks);
 ---
 
 <Layout title={`Tag:${tag} | ${SITE.title}`}>
@@ -51,6 +55,11 @@ const sortTagsPost = getSortedPosts(tagPosts);
       {
         sortTagsPost.map(({ data }) => (
           <Card href={`/posts/${slugify(data)}`} frontmatter={data} />
+        ))
+      }
+      {
+        sortTagsBooks.map(({ data }) => (
+          <Card href={`/books/${slugify(data)}`} frontmatter={data} />
         ))
       }
     </ul>

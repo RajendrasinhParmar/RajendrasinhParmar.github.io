@@ -1,0 +1,140 @@
+---
+import { SITE } from "@config";
+import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import Card from "@components/Card";
+import LinkButton from "@components/LinkButton.astro";
+import slugify from "@utils/slugify";
+import type { CollectionEntry } from "astro:content";
+
+export interface Props {
+  pageNum: number;
+  totalPages: number;
+  books: CollectionEntry<"book">[];
+}
+
+const { pageNum, totalPages, books } = Astro.props;
+
+const prev = pageNum > 1 ? "" : "disabled";
+const next = pageNum < totalPages ? "" : "disabled";
+
+const getStatusColor = (status: string) => {
+  switch (status) {
+    case "reading":
+      return "text-blue-500";
+    case "completed":
+      return "text-green-500";
+    case "to-read":
+      return "text-yellow-500";
+    default:
+      return "text-gray-500";
+  }
+};
+
+const getRatingStars = (rating: number) => {
+  return "★".repeat(rating) + "☆".repeat(5 - rating);
+};
+---
+
+<Layout title={`Books | ${SITE.title}`}>
+  <Header activeNav="books" />
+  <Main pageTitle="Books" pageDesc="My reading journey and book reviews.">
+    <ul>
+      {
+        books.map(({ data }) => (
+          <li class="mb-6">
+            <Card href={`/books/${slugify(data)}`} frontmatter={data}>
+              <div class="book-details">
+                <p class="book-author">By {data.bookAuthor}</p>
+                {data.rating && (
+                  <div class="book-rating">
+                    <span class="stars">{getRatingStars(data.rating)}</span>
+                    <span class="rating-value">{data.rating}/5</span>
+                  </div>
+                )}
+                <div class="book-meta">
+                  <span class={`status ${getStatusColor(data.status)}`}>
+                    {data.status}
+                  </span>
+                  {data.genre && (
+                    <span class="genre">
+                      {data.genre.join(", ")}
+                    </span>
+                  )}
+                </div>
+              </div>
+            </Card>
+          </li>
+        ))
+      }
+    </ul>
+  </Main>
+
+  {
+    totalPages > 1 && (
+      <nav class="pagination-wrapper" aria-label="Pagination">
+        <LinkButton
+          disabled={prev === "disabled"}
+          href={`/books${pageNum - 1 !== 1 ? "/" + (pageNum - 1) : ""}`}
+          className={`mr-4 select-none ${prev}`}
+          ariaLabel="Previous"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class={`${prev}-svg`}>
+            <path d="M12.707 17.293 8.414 13H18v-2H8.414l4.293-4.293-1.414-1.414L4.586 12l6.707 6.707z" />
+          </svg>
+          Prev
+        </LinkButton>
+        <LinkButton
+          disabled={next === "disabled"}
+          href={`/books/${pageNum + 1}`}
+          className={`ml-4 select-none ${next}`}
+          ariaLabel="Next"
+        >
+          Next
+          <svg xmlns="http://www.w3.org/2000/svg" class={`${next}-svg`}>
+            <path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z" />
+          </svg>
+        </LinkButton>
+      </nav>
+    )
+  }
+  <Footer noMarginTop={totalPages > 1} />
+</Layout>
+
+<style>
+  .pagination-wrapper {
+    @apply mb-8 mt-auto flex justify-center;
+  }
+  .disabled {
+    @apply pointer-events-none select-none opacity-50 hover:text-skin-base group-hover:fill-skin-base;
+  }
+  .disabled-svg {
+    @apply group-hover:!fill-skin-base;
+  }
+  .book-details {
+    @apply mt-2;
+  }
+  .book-author {
+    @apply text-sm text-gray-600 dark:text-gray-400 mb-2;
+  }
+  .book-rating {
+    @apply flex items-center gap-2 mb-2;
+  }
+  .stars {
+    @apply text-yellow-500;
+  }
+  .rating-value {
+    @apply text-sm text-gray-600 dark:text-gray-400;
+  }
+  .book-meta {
+    @apply flex flex-wrap gap-2 text-sm;
+  }
+  .status {
+    @apply font-medium;
+  }
+  .genre {
+    @apply text-gray-600 dark:text-gray-400;
+  }
+</style>

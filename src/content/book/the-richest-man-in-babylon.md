@@ -7,10 +7,17 @@ featured: false
 draft: true
 tags:
   - bookreview
-author: George S. Clason
+  - english
+  - non-fiction
+  - finance
+bookAuthor: George S. Clason
+rating: 4
+genre:
+  - non-fiction
+  - finance
 ---
 
-<img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1535865613i/41592121.jpg" height="300" alt="The India way Book cover">
+<img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1535865613i/41592121.jpg" style="height: 450px;" alt="The India way Book cover">
 
 A Review of the Book **"The Richest Man In Babylon"**
 

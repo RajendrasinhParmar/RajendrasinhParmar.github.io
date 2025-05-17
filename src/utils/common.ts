@@ -9,3 +9,11 @@ export const filterPostByDraft = ({ data }: CollectionEntry<"blog">) => {
 
   return !data.draft;
 };
+
+export const filterBookByDraft = ({ data }: CollectionEntry<"book">) => {
+  if (isDev) {
+    return true;
+  }
+
+  return !data.draft;
+};

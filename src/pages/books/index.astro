@@ -1,0 +1,35 @@
+---
+import { SITE } from "@config";
+import Books from "@layouts/Books.astro";
+import getSortedBooks from "@utils/getSortedBooks";
+import getPageNumbers from "@utils/getPageNumbers";
+import { getCollection } from "astro:content";
+
+const books = await getCollection("book");
+const sortBy = Astro.url.searchParams.get("sort") || "date";
+
+const sortedBooks = getSortedBooks(books, sortBy as any);
+const totalPages = getPageNumbers(sortedBooks.length);
+const paginatedBooks = sortedBooks.slice(0, SITE.postPerPage);
+---
+
+<Books 
+  books={paginatedBooks} 
+  pageNum={1} 
+  totalPages={totalPages.length}
+/>
+
+<script>
+  // Handle sort changes
+  const sortSelect = document.getElementById('sort-select') as HTMLSelectElement;
+  if (sortSelect) {
+    sortSelect.addEventListener('change', (e: Event) => {
+      const target = e.target as HTMLSelectElement;
+      if (target?.value) {
+        const url = new URL(window.location.href);
+        url.searchParams.set('sort', target.value);
+        window.location.href = url.toString();
+      }
+    });
+  }
+</script>
