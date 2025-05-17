@@ -4,31 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "7c5572f9a3f29c6d",
+        "id": "5454b05745c4251f",
         "type": "tabs",
         "children": [
           {
-            "id": "b1a94311c7b16090",
+            "id": "cfdb61d444f7b16e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "src/content/blog/the-richest-man-in-babylon.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "the-richest-man-in-babylon"
+              "title": "New tab"
             }
           }
         ]
@@ -88,8 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 523.5,
-    "collapsed": true
+    "width": 523.5
   },
   "right": {
     "id": "079e6266523f977e",
@@ -172,52 +157,53 @@
       "hide-folders:Show hidden folders": false
     }
   },
-  "active": "b1a94311c7b16090",
+  "active": "2023ae4a43e7c9f0",
   "lastOpenFiles": [
+    "src/assets/images/logo-sonarqube-community.png",
+    "src/assets/images/logo-sonarqube-community.png.crdownload",
+    "src/assets/images/static_code_analysis.png",
+    "src/assets/images/static_code_analysis.png.crdownload",
+    "dist/_astro/llama_3.2_quantized.2Q4wIuQv_Z5MpuU@1020w.webp",
+    "dist/_astro/llama_3.2_quantized.2Q4wIuQv_Z5MpuU@1320w.webp",
+    "dist/_astro/llama_3.2_quantized.2Q4wIuQv_Z5MpuU@1620w.webp",
+    "dist/_astro/docker_corepack.BHzkCwWP_52wEw@892w.webp",
+    "dist/_astro/docker_corepack.BHzkCwWP_52wEw@1192w.webp",
+    "dist/_astro/docker_corepack.BHzkCwWP_52wEw@1492w.webp",
+    "dist/_jampack",
+    "dist/sitemap-0.xml",
+    "dist/sitemap-index.xml",
+    "dist/_astro/nextjs-conf24-ticket.B-tG3QbJ_VoeAt.webp",
+    "dist/_astro/nextjs-versioned-docs.DsfIwssC_qmO9h.webp",
+    "dist/_astro/nextjs-build-tests.CjniAtqV_Z1DBtMN.webp",
+    "dist/tags/ubuntu/index.html",
+    "dist/tags/ubuntu",
+    "dist/tags/terminal/index.html",
+    "dist/tags/terminal",
+    "dist/tags/ssh/index.html",
+    "src/content/book/the-diary-of-a-ceo-the-33-laws-of-business-and-life-book-review.md",
+    "src/content/book/the-naga-warriors-1-battle-of-gokul-vol-1.md",
+    "src/content/book/the-diary-of-a-ceo.md",
+    "src/content/book/the-richest-man-in-babylon.md",
+    "src/content/book/the-naga-warriors-2-battle-of-gokul-vol-2.md",
+    "src/content/book/the-midnight-library.md",
+    "src/content/book/The-India-Way.md",
+    "src/content/book/murder-on-the-orient-express.md",
+    "src/content/book/Playground.md",
+    "src/content/book/the-diary-of-a-ceo..md",
+    "obsidian-templates/book.md",
+    "obsidian-templates/post.md",
+    "src/content/blog/test.md",
+    "src/content/blog/setup-sonarqube-on-ubuntu-ec2.md",
+    "src/content/blog/Playground.md",
+    "src/content/blog/murder-on-the-orient-express.md",
+    "src/content/blog/Murder on the Orient Express.md",
+    "src/content/blog/The-India-Way.md",
+    "src/content/blog/the-midnight-library.md",
+    "src/content/blog/the-richest-man-in-babylon.md",
     "src/content/blog/corepack-failing-for-pnpm-install.md",
-    "package.json.1543375292",
-    "pnpm-lock.yaml.2968515719",
-    "_tmp_17513_c8ae87854dc8420b9a6f6eea95eeb1cd",
-    "package.json.991549057",
-    "pnpm-lock.yaml.4085318165",
-    "_tmp_17313_12edc088070a7beff5e2d92749070d57",
-    "src/assets/images/docker_corepack.webp",
     "src/content/blog/meta-ai-releases-new-quantized-versions-of-llama-3.2(1b-&-3b).md",
     "src/content/blog/keyboard-mapping-in-linux-with-xmodmap.md",
     "src/content/blog/extend-volume-associated-with-ubuntu-ec2-instance.md",
-    "src/content/blog/file-permissions-for-ssh-setup.md",
-    "src/content/blog/docker-fails-to-connect-to-internet.md",
-    "src/content/blog/docker-desktop-not-starting-in-ubuntu-24.04-lts.md",
-    "src/content/blog/desktop-entry-in-linux.md",
-    "public/docker_corepack.webp.crdownload",
-    "src/content/blog/nextjs-conf24-keynotes.md",
-    "obsidian-templates/random-pic.md",
-    "obsidian-templates/post.md",
-    "src/content/blog/common-ways-to-upgrade-llm.md",
-    "src/content/blog/context-managers-in-python.md",
-    "src/content/blog/the-richest-man-in-babylon.md",
-    "src/content/blog/The-India-Way.md",
-    "src/content/blog/the-midnight-library.md",
-    "src/content/blog/websocket-with-nginx.md",
-    "_tmp_14349_c0bb45248a1c324e4d95ad997adb4331",
-    "dist/_astro/llama_3.2_quantized.2Q4wIuQv_ZAtr6R@1020w.webp",
-    "dist/_astro/llama_3.2_quantized.2Q4wIuQv_ZAtr6R@1320w.webp",
-    "dist/_astro/llama_3.2_quantized.2Q4wIuQv_ZAtr6R@1620w.webp",
-    "dist/_jampack",
-    "dist/sitemap-0.xml",
-    "dist/_astro/OmniParser_performance_fig2_1400px-1024x683.D0sgwDSl_s0me9.webp",
-    "dist/_astro/OmniParser_performance_fig1_1400px-1024x683.20Y1Z9zc_YMofz.webp",
-    "dist/_astro/nextjs-versioned-docs.DsfIwssC_1NRiDY.webp",
-    "dist/_astro/nextjs-build-tests.CjniAtqV_Zrydqz.webp",
-    "dist/_astro/nextjs-dev-tests.GlVosELJ_1FIo20.webp",
-    "dist/_astro/nextjs-conf24-ticket.B-tG3QbJ_Zz88OB.webp",
-    "src/content/blog/tailwind-typography.md",
-    "src/content/blog/how-to-configure-astropaper-theme.md",
-    "src/content/blog/how-to-add-an-estimated-reading-time.md",
-    "src/content/blog/example-draft-post.md",
-    "src/content/blog/use-predicted-outputs-with-openai.md",
-    "src/content/blog/docker-desktop-issue-with-ubuntu-24.04-lts.md",
-    "src/content/blog/useful-linux-commands.md",
-    "src/content/blog/optimize-memory-management-with-dynamic-swap-in-ubuntu.md"
+    "src/content/blog/file-permissions-for-ssh-setup.md"
   ]
 }

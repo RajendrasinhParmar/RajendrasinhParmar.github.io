@@ -17,13 +17,17 @@
     {
       "folder": "src/content/blog",
       "template": "obsidian-templates/post.md"
+    },
+    {
+      "folder": "src/content/book",
+      "template": "obsidian-templates/book.md"
     }
   ],
   "syntax_highlighting": true,
+  "syntax_highlighting_mobile": false,
   "enabled_templates_hotkeys": [],
   "startup_templates": [
     ""
   ],
-  "enable_ribbon_icon": true,
-  "syntax_highlighting_mobile": false
+  "enable_ribbon_icon": true
 }
