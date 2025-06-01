@@ -4,17 +4,31 @@
     "type": "split",
     "children": [
       {
-        "id": "5454b05745c4251f",
+        "id": "759febadf3e733f9",
         "type": "tabs",
         "children": [
           {
-            "id": "cfdb61d444f7b16e",
+            "id": "f681662700544b49",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "src/content/blog/fix-err_network_changed-error-on-your-system-when-docker-is-installed.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "fix-err_network_changed-error-on-your-system-when-docker-is-installed"
             }
           }
         ]
@@ -157,8 +171,12 @@
       "hide-folders:Show hidden folders": false
     }
   },
-  "active": "2023ae4a43e7c9f0",
+  "active": "f681662700544b49",
   "lastOpenFiles": [
+    "src/content/blog/docker-fails-to-connect-to-internet.md",
+    "src/content/blog/docker-desktop-not-starting-in-ubuntu-24.04-lts.md",
+    "src/content/blog/fix-err_network_changed-error-on-your-system-when-docker-is-installed.md",
+    "src/content/blog/a-custom-decorator-for-retry-in-python.md",
     "src/assets/images/logo-sonarqube-community.png",
     "src/assets/images/logo-sonarqube-community.png.crdownload",
     "src/assets/images/static_code_analysis.png",
@@ -174,7 +192,6 @@
     "dist/sitemap-index.xml",
     "dist/_astro/nextjs-conf24-ticket.B-tG3QbJ_VoeAt.webp",
     "dist/_astro/nextjs-versioned-docs.DsfIwssC_qmO9h.webp",
-    "dist/_astro/nextjs-build-tests.CjniAtqV_Z1DBtMN.webp",
     "dist/tags/ubuntu/index.html",
     "dist/tags/ubuntu",
     "dist/tags/terminal/index.html",
@@ -201,9 +218,6 @@
     "src/content/blog/the-midnight-library.md",
     "src/content/blog/the-richest-man-in-babylon.md",
     "src/content/blog/corepack-failing-for-pnpm-install.md",
-    "src/content/blog/meta-ai-releases-new-quantized-versions-of-llama-3.2(1b-&-3b).md",
-    "src/content/blog/keyboard-mapping-in-linux-with-xmodmap.md",
-    "src/content/blog/extend-volume-associated-with-ubuntu-ec2-instance.md",
-    "src/content/blog/file-permissions-for-ssh-setup.md"
+    "src/content/blog/meta-ai-releases-new-quantized-versions-of-llama-3.2(1b-&-3b).md"
   ]
 }
