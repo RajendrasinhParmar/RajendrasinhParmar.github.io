@@ -173,6 +173,12 @@
   },
   "active": "f681662700544b49",
   "lastOpenFiles": [
+    "package.json.2107203122",
+    "pnpm-lock.yaml.2680124522",
+    "_tmp_28045_96b19f5c80c23cec090ee658ee6be0ac",
+    "package.json.4026489181",
+    "pnpm-lock.yaml.2546681021",
+    "_tmp_27875_1bc975743ba8b32746dc4345a9c54500",
     "src/content/blog/docker-fails-to-connect-to-internet.md",
     "src/content/blog/docker-desktop-not-starting-in-ubuntu-24.04-lts.md",
     "src/content/blog/fix-err_network_changed-error-on-your-system-when-docker-is-installed.md",
@@ -192,11 +198,6 @@
     "dist/sitemap-index.xml",
     "dist/_astro/nextjs-conf24-ticket.B-tG3QbJ_VoeAt.webp",
     "dist/_astro/nextjs-versioned-docs.DsfIwssC_qmO9h.webp",
-    "dist/tags/ubuntu/index.html",
-    "dist/tags/ubuntu",
-    "dist/tags/terminal/index.html",
-    "dist/tags/terminal",
-    "dist/tags/ssh/index.html",
     "src/content/book/the-diary-of-a-ceo-the-33-laws-of-business-and-life-book-review.md",
     "src/content/book/the-naga-warriors-1-battle-of-gokul-vol-1.md",
     "src/content/book/the-diary-of-a-ceo.md",
@@ -217,7 +218,6 @@
     "src/content/blog/The-India-Way.md",
     "src/content/blog/the-midnight-library.md",
     "src/content/blog/the-richest-man-in-babylon.md",
-    "src/content/blog/corepack-failing-for-pnpm-install.md",
-    "src/content/blog/meta-ai-releases-new-quantized-versions-of-llama-3.2(1b-&-3b).md"
+    "src/content/blog/corepack-failing-for-pnpm-install.md"
   ]
 }
