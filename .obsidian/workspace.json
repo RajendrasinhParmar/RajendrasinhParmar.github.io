@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "891189c95e975a09",
+        "id": "f272e87931134d8a",
         "type": "tabs",
         "children": [
           {
-            "id": "0407e0754607794c",
+            "id": "d3c9cb106e2b3a45",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/blog/poetry-updating-a-package-to-a-new-version.md",
+                "file": "src/content/book/the-richest-man-in-babylon.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "poetry-updating-a-package-to-a-new-version"
+              "title": "the-richest-man-in-babylon"
             }
           }
         ]
@@ -171,8 +171,9 @@
       "hide-folders:Show hidden folders": false
     }
   },
-  "active": "0407e0754607794c",
+  "active": "d3c9cb106e2b3a45",
   "lastOpenFiles": [
+    "src/content/blog/poetry-updating-a-package-to-a-new-version.md",
     "package.json.1669456632",
     "pnpm-lock.yaml.1609820240",
     "_tmp_94684_77f3b2fb92044a064a7c03bbd3087d00",
@@ -180,7 +181,6 @@
     "pnpm-lock.yaml.3457625016",
     "_tmp_94501_ba4280ac898b53e95a6339dc90d5bec6",
     "src/content/blog/a-custom-decorator-for-retry-in-python.md",
-    "src/content/blog/poetry-updating-a-package-to-a-new-version.md",
     "src/content/book/the-midnight-library.md",
     "src/content/book/the-diary-of-a-ceo-the-33-laws-of-business-and-life-book-review.md",
     "src/content/book/the-naga-warriors-1-battle-of-gokul-vol-1.md",
@@ -191,7 +191,6 @@
     "pnpm-lock.yaml.2680124522",
     "_tmp_28045_96b19f5c80c23cec090ee658ee6be0ac",
     "package.json.4026489181",
-    "pnpm-lock.yaml.2546681021",
     "src/content/blog/docker-fails-to-connect-to-internet.md",
     "src/content/blog/docker-desktop-not-starting-in-ubuntu-24.04-lts.md",
     "src/assets/images/logo-sonarqube-community.png",

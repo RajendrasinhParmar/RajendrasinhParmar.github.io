@@ -4,7 +4,7 @@ description: A Book Review of "The Richest Man In Babylon"
 pubDatetime: 2025-01-26T01:15:47+05:30
 postSlug: the-richest-man-in-babylon
 featured: false
-draft: true
+draft: false
 tags:
   - bookreview
   - english
@@ -25,7 +25,7 @@ A Review of the Book **"The Richest Man In Babylon"**
 
 ## **Summary**
 
-The book is about the fundamental ideas of managing income and spending.
+The book explores the fundamental principles of managing income and expenditure.
 The book's few main points involved keeping a portion of the income as an investment. Also discusses abo.t gold, Ho, these, these lessons are timeless and universally applicable.
 
 The book follows the story of Arkad, the richest man in Babylon, who became a teacher to teach finance to his fellow citizens. He uses various short stories to explain lessons on saving, investing and growing wealth.
@@ -38,7 +38,7 @@ The first step to financial freedom is to pay yourself a portion of your income,
 
 ### Control your expenses
 
-Best way to save money is to understand the difference between necessities and desires so that we are not overspending more than what we should. This can make sure that your money is not going to waste.
+The best way to save money is to understand the difference between necessities and desires so that we are not overspending more than we should. This can make sure that your money is not going to waste.
 
 ### Make your money work for you
 
