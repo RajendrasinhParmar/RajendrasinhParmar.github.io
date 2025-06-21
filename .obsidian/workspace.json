@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "759febadf3e733f9",
+        "id": "891189c95e975a09",
         "type": "tabs",
         "children": [
           {
-            "id": "f681662700544b49",
+            "id": "0407e0754607794c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/blog/fix-err_network_changed-error-on-your-system-when-docker-is-installed.md",
+                "file": "src/content/blog/poetry-updating-a-package-to-a-new-version.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "fix-err_network_changed-error-on-your-system-when-docker-is-installed"
+              "title": "poetry-updating-a-package-to-a-new-version"
             }
           }
         ]
@@ -171,41 +171,43 @@
       "hide-folders:Show hidden folders": false
     }
   },
-  "active": "f681662700544b49",
+  "active": "0407e0754607794c",
   "lastOpenFiles": [
+    "package.json.1669456632",
+    "pnpm-lock.yaml.1609820240",
+    "_tmp_94684_77f3b2fb92044a064a7c03bbd3087d00",
+    "package.json.3972419112",
+    "pnpm-lock.yaml.3457625016",
+    "_tmp_94501_ba4280ac898b53e95a6339dc90d5bec6",
+    "src/content/blog/a-custom-decorator-for-retry-in-python.md",
+    "src/content/blog/poetry-updating-a-package-to-a-new-version.md",
+    "src/content/book/the-midnight-library.md",
+    "src/content/book/the-diary-of-a-ceo-the-33-laws-of-business-and-life-book-review.md",
+    "src/content/book/the-naga-warriors-1-battle-of-gokul-vol-1.md",
+    "src/content/book/the-rozabal-line-book-review.md",
+    "src/content/book/murder-on-the-orient-express.md",
+    "src/content/blog/fix-err_network_changed-error-on-your-system-when-docker-is-installed.md",
     "package.json.2107203122",
     "pnpm-lock.yaml.2680124522",
     "_tmp_28045_96b19f5c80c23cec090ee658ee6be0ac",
     "package.json.4026489181",
     "pnpm-lock.yaml.2546681021",
-    "_tmp_27875_1bc975743ba8b32746dc4345a9c54500",
     "src/content/blog/docker-fails-to-connect-to-internet.md",
     "src/content/blog/docker-desktop-not-starting-in-ubuntu-24.04-lts.md",
-    "src/content/blog/fix-err_network_changed-error-on-your-system-when-docker-is-installed.md",
-    "src/content/blog/a-custom-decorator-for-retry-in-python.md",
     "src/assets/images/logo-sonarqube-community.png",
-    "src/assets/images/logo-sonarqube-community.png.crdownload",
     "src/assets/images/static_code_analysis.png",
-    "src/assets/images/static_code_analysis.png.crdownload",
     "dist/_astro/llama_3.2_quantized.2Q4wIuQv_Z5MpuU@1020w.webp",
     "dist/_astro/llama_3.2_quantized.2Q4wIuQv_Z5MpuU@1320w.webp",
     "dist/_astro/llama_3.2_quantized.2Q4wIuQv_Z5MpuU@1620w.webp",
     "dist/_astro/docker_corepack.BHzkCwWP_52wEw@892w.webp",
     "dist/_astro/docker_corepack.BHzkCwWP_52wEw@1192w.webp",
     "dist/_astro/docker_corepack.BHzkCwWP_52wEw@1492w.webp",
-    "dist/_jampack",
-    "dist/sitemap-0.xml",
-    "dist/sitemap-index.xml",
     "dist/_astro/nextjs-conf24-ticket.B-tG3QbJ_VoeAt.webp",
     "dist/_astro/nextjs-versioned-docs.DsfIwssC_qmO9h.webp",
-    "src/content/book/the-diary-of-a-ceo-the-33-laws-of-business-and-life-book-review.md",
-    "src/content/book/the-naga-warriors-1-battle-of-gokul-vol-1.md",
     "src/content/book/the-diary-of-a-ceo.md",
     "src/content/book/the-richest-man-in-babylon.md",
     "src/content/book/the-naga-warriors-2-battle-of-gokul-vol-2.md",
-    "src/content/book/the-midnight-library.md",
     "src/content/book/The-India-Way.md",
-    "src/content/book/murder-on-the-orient-express.md",
     "src/content/book/Playground.md",
     "src/content/book/the-diary-of-a-ceo..md",
     "obsidian-templates/book.md",
@@ -216,8 +218,6 @@
     "src/content/blog/murder-on-the-orient-express.md",
     "src/content/blog/Murder on the Orient Express.md",
     "src/content/blog/The-India-Way.md",
-    "src/content/blog/the-midnight-library.md",
-    "src/content/blog/the-richest-man-in-babylon.md",
-    "src/content/blog/corepack-failing-for-pnpm-install.md"
+    "src/content/blog/the-midnight-library.md"
   ]
 }
