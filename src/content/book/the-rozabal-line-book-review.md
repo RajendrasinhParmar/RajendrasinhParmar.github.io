@@ -23,28 +23,7 @@ A Book Review of "The Rozabal Line"
 
 Ashwin Sanghi's "The Rozabal Line" is a great read in historical fiction section. The book starts with multiple disconnected scenes and gradually they get connected through out the story.
 
-The best part about the author is a log of research. So there are so many places that actually exists and so many events that actually happened in past.
-
-The narrative follows the lives of several characters.
-
-- **Character Name**, description.
-- **Character Name**, description.
-- **Character Name**, description.
-
-Themes covered in the book
-
-- **Theme 1** - description.
-- **Theme 2** - description.
-- **Theme 3** - description.
-
-**Key Location/Concept**
-
-This is a key location or concept in the book. Add details about its significance and how it relates to the overall story.
-
-**Another Key Element**
-
-Further description of another important element, character, or concept from the book.
-
+This is a very fast paced novel that blends history, myth and conspiracy. Sanghi has done a very good job in weaving religion, history and political intrigue. The story also spans continent and centuries
 Quotes from the book
 
 > Life Puts us in situations so that we can learn from them. Once we have learned, it's time to throw away the guilt and move on
