@@ -21,8 +21,8 @@ importers:
         specifier: ^2.6.2
         version: 2.6.2
       astro:
-        specifier: ^5.10.0
-        version: 5.10.0(@types/node@20.14.2)(jiti@1.21.6)(lightningcss@1.25.1)(rollup@4.40.1)(terser@5.31.1)(typescript@5.4.5)(yaml@2.5.1)
+        specifier: ^5.11.0
+        version: 5.11.0(@types/node@20.14.2)(jiti@1.21.6)(lightningcss@1.25.1)(rollup@4.40.1)(terser@5.31.1)(typescript@5.4.5)(yaml@2.5.1)
       fuse.js:
         specifier: ^6.6.2
         version: 6.6.2
@@ -53,7 +53,7 @@ importers:
         version: 3.4.1
       '@astrojs/tailwind':
         specifier: ^6.0.2
-        version: 6.0.2(astro@5.10.0(@types/node@20.14.2)(jiti@1.21.6)(lightningcss@1.25.1)(rollup@4.40.1)(terser@5.31.1)(typescript@5.4.5)(yaml@2.5.1))(tailwindcss@3.4.4)
+        version: 6.0.2(astro@5.11.0(@types/node@20.14.2)(jiti@1.21.6)(lightningcss@1.25.1)(rollup@4.40.1)(terser@5.31.1)(typescript@5.4.5)(yaml@2.5.1))(tailwindcss@3.4.4)
       '@tailwindcss/typography':
         specifier: ^0.5.13
         version: 0.5.13(tailwindcss@3.4.4)
@@ -1360,8 +1360,8 @@ packages:
     resolution: {integrity: sha512-CGaBseNtunAV2DCpwBXqTKq8+9Tw65XZetMaC0FsMoZuLj0gxNIkbCf2QyKYScVrNOU7/ayfNdVw8ZCSHBiqCg==}
     engines: {node: ^14.18.0 || >=16.0.0}
 
-  astro@5.10.0:
-    resolution: {integrity: sha512-g/t54kVzQnFVijs+GbbbX/NBAFTl/3yNAEA/AQYq4FumLLVv7n4BIF+jKhcPGn9iFGyT1Cjvr7KB/qYyNvHEIg==}
+  astro@5.11.0:
+    resolution: {integrity: sha512-MEICntERthUxJPSSDsDiZuwiCMrsaYy3fnDhp4c6ScUfldCB8RBnB/myYdpTFXpwYBy6SgVsHQ1H4MuuA7ro/Q==}
     engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -4226,9 +4226,9 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.24.3
 
-  '@astrojs/tailwind@6.0.2(astro@5.10.0(@types/node@20.14.2)(jiti@1.21.6)(lightningcss@1.25.1)(rollup@4.40.1)(terser@5.31.1)(typescript@5.4.5)(yaml@2.5.1))(tailwindcss@3.4.4)':
+  '@astrojs/tailwind@6.0.2(astro@5.11.0(@types/node@20.14.2)(jiti@1.21.6)(lightningcss@1.25.1)(rollup@4.40.1)(terser@5.31.1)(typescript@5.4.5)(yaml@2.5.1))(tailwindcss@3.4.4)':
     dependencies:
-      astro: 5.10.0(@types/node@20.14.2)(jiti@1.21.6)(lightningcss@1.25.1)(rollup@4.40.1)(terser@5.31.1)(typescript@5.4.5)(yaml@2.5.1)
+      astro: 5.11.0(@types/node@20.14.2)(jiti@1.21.6)(lightningcss@1.25.1)(rollup@4.40.1)(terser@5.31.1)(typescript@5.4.5)(yaml@2.5.1)
       autoprefixer: 10.4.21(postcss@8.5.3)
       postcss: 8.5.3
       postcss-load-config: 4.0.2(postcss@8.5.3)
@@ -5332,7 +5332,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  astro@5.10.0(@types/node@20.14.2)(jiti@1.21.6)(lightningcss@1.25.1)(rollup@4.40.1)(terser@5.31.1)(typescript@5.4.5)(yaml@2.5.1):
+  astro@5.11.0(@types/node@20.14.2)(jiti@1.21.6)(lightningcss@1.25.1)(rollup@4.40.1)(terser@5.31.1)(typescript@5.4.5)(yaml@2.5.1):
     dependencies:
       '@astrojs/compiler': 2.12.2
       '@astrojs/internal-helpers': 0.6.1
