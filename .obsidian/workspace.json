@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "f272e87931134d8a",
+        "id": "5bbe40b3beacc0b0",
         "type": "tabs",
         "children": [
           {
-            "id": "d3c9cb106e2b3a45",
+            "id": "6a319b5ef4a620d9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/book/the-richest-man-in-babylon.md",
+                "file": "src/content/book/Playground.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "the-richest-man-in-babylon"
+              "title": "Playground"
             }
           }
         ]
@@ -171,8 +171,15 @@
       "hide-folders:Show hidden folders": false
     }
   },
-  "active": "d3c9cb106e2b3a45",
+  "active": "6a319b5ef4a620d9",
   "lastOpenFiles": [
+    "package.json.2622010868",
+    "pnpm-lock.yaml.1663167851",
+    "_tmp_30573_e474a94cec7aadcc8ed378c78c3467ab",
+    "src/content/book/murder-on-the-orient-express.md",
+    "src/content/book/white-nights-book-review.md",
+    "src/content/book/the-rozabal-line-book-review.md",
+    "src/content/book/the-richest-man-in-babylon.md",
     "src/content/blog/poetry-updating-a-package-to-a-new-version.md",
     "package.json.1669456632",
     "pnpm-lock.yaml.1609820240",
@@ -184,13 +191,9 @@
     "src/content/book/the-midnight-library.md",
     "src/content/book/the-diary-of-a-ceo-the-33-laws-of-business-and-life-book-review.md",
     "src/content/book/the-naga-warriors-1-battle-of-gokul-vol-1.md",
-    "src/content/book/the-rozabal-line-book-review.md",
-    "src/content/book/murder-on-the-orient-express.md",
     "src/content/blog/fix-err_network_changed-error-on-your-system-when-docker-is-installed.md",
     "package.json.2107203122",
     "pnpm-lock.yaml.2680124522",
-    "_tmp_28045_96b19f5c80c23cec090ee658ee6be0ac",
-    "package.json.4026489181",
     "src/content/blog/docker-fails-to-connect-to-internet.md",
     "src/content/blog/docker-desktop-not-starting-in-ubuntu-24.04-lts.md",
     "src/assets/images/logo-sonarqube-community.png",
@@ -204,7 +207,6 @@
     "dist/_astro/nextjs-conf24-ticket.B-tG3QbJ_VoeAt.webp",
     "dist/_astro/nextjs-versioned-docs.DsfIwssC_qmO9h.webp",
     "src/content/book/the-diary-of-a-ceo.md",
-    "src/content/book/the-richest-man-in-babylon.md",
     "src/content/book/the-naga-warriors-2-battle-of-gokul-vol-2.md",
     "src/content/book/The-India-Way.md",
     "src/content/book/Playground.md",
@@ -216,7 +218,6 @@
     "src/content/blog/Playground.md",
     "src/content/blog/murder-on-the-orient-express.md",
     "src/content/blog/Murder on the Orient Express.md",
-    "src/content/blog/The-India-Way.md",
-    "src/content/blog/the-midnight-library.md"
+    "src/content/blog/The-India-Way.md"
   ]
 }
