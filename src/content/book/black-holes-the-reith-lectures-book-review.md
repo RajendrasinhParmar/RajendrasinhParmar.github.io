@@ -17,7 +17,7 @@ genre:
   - non-fiction
   - astronomy
   - space
-status: reading
+status: completed
 ---
 
 <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1560566964i/29537175.jpg" style="height: 450px;" alt="Black Holes The Reith Lectures Book cover">

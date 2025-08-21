@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "bb96164b5bd16d32",
+        "id": "9c6828be9ae8e922",
         "type": "tabs",
         "children": [
           {
-            "id": "6e7a356de4a93d06",
+            "id": "5e7930e59a2c7017",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -172,11 +172,11 @@
       "hide-folders:Show hidden folders": false
     }
   },
-  "active": "6e7a356de4a93d06",
+  "active": "5e7930e59a2c7017",
   "lastOpenFiles": [
+    "src/content/book/black-holes-the-reith-lectures-book-review.md",
     "_tmp_14448_bfb5fd40b66e5400ebca02a178e45334",
     "_tmp_13729_ab5714df04d25a37d5759f661c68b133",
-    "src/content/book/black-holes-the-reith-lectures-book-review.md",
     "src/content/blog/2025-08-20.md",
     "src/content/book/Playground.md",
     "package.json.2622010868",
@@ -192,7 +192,6 @@
     "_tmp_94684_77f3b2fb92044a064a7c03bbd3087d00",
     "package.json.3972419112",
     "pnpm-lock.yaml.3457625016",
-    "_tmp_94501_ba4280ac898b53e95a6339dc90d5bec6",
     "src/content/blog/a-custom-decorator-for-retry-in-python.md",
     "src/content/book/the-midnight-library.md",
     "src/content/book/the-diary-of-a-ceo-the-33-laws-of-business-and-life-book-review.md",
