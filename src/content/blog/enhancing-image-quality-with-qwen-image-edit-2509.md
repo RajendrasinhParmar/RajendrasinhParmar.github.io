@@ -157,3 +157,8 @@ Qwen Image Edit 2509 proves to be a versatile and powerful tool for both image g
 Whether you're looking to generate entirely new images or enhance existing ones, Qwen Image Edit 2509 offers the precision and quality needed for professional results. The key is understanding how to structure your prompts appropriately for your specific use case - from simple creative exploration to detailed technical specifications.
 
 For best results, experiment with different prompt complexities and be explicit about your requirements, especially when working with base images that need specific elements preserved.
+
+## References
+
+- [Hugging Face Qwen Image Edit 2509](https://huggingface.co/Qwen/Qwen2.5-Image-Edit-2509)
+- [Qwen Chat for experimental testing](https://chat.qwen.ai/)
