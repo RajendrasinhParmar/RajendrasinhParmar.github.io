@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "9c6828be9ae8e922",
+        "id": "82a681c93154a358",
         "type": "tabs",
         "children": [
           {
-            "id": "5e7930e59a2c7017",
+            "id": "7e24d9e117e89c2a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/book/black-holes-the-reith-lectures-book-review.md",
+                "file": "src/content/blog/enhancing-image-quality-with-qwen-image-edit-2509.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "black-holes-the-reith-lectures-book-review"
+              "title": "enhancing-image-quality-with-qwen-image-edit-2509"
             }
           }
         ]
@@ -172,8 +172,10 @@
       "hide-folders:Show hidden folders": false
     }
   },
-  "active": "5e7930e59a2c7017",
+  "active": "7e24d9e117e89c2a",
   "lastOpenFiles": [
+    "src/content/blog/common-ways-to-upgrade-llm.md",
+    "src/content/blog/enhancing-image-quality-with-qwen-image-edit-2509.md",
     "src/content/book/black-holes-the-reith-lectures-book-review.md",
     "_tmp_14448_bfb5fd40b66e5400ebca02a178e45334",
     "_tmp_13729_ab5714df04d25a37d5759f661c68b133",
@@ -217,7 +219,6 @@
     "obsidian-templates/post.md",
     "src/content/blog/test.md",
     "src/content/blog/setup-sonarqube-on-ubuntu-ec2.md",
-    "src/content/blog/Playground.md",
-    "src/content/blog/murder-on-the-orient-express.md"
+    "src/content/blog/Playground.md"
   ]
 }
