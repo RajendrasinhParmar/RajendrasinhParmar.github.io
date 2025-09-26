@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/blog/enhancing-image-quality-with-qwen-image-edit-2509.md",
+                "file": "src/content/book/murder-on-the-orient-express.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "enhancing-image-quality-with-qwen-image-edit-2509"
+              "title": "murder-on-the-orient-express"
             }
           }
         ]
@@ -174,9 +174,11 @@
   },
   "active": "7e24d9e117e89c2a",
   "lastOpenFiles": [
-    "src/content/blog/common-ways-to-upgrade-llm.md",
-    "src/content/blog/enhancing-image-quality-with-qwen-image-edit-2509.md",
     "src/content/book/black-holes-the-reith-lectures-book-review.md",
+    "src/content/book/white-nights-book-review.md",
+    "src/content/book/the-rozabal-line-book-review.md",
+    "src/content/blog/enhancing-image-quality-with-qwen-image-edit-2509.md",
+    "src/content/blog/common-ways-to-upgrade-llm.md",
     "_tmp_14448_bfb5fd40b66e5400ebca02a178e45334",
     "_tmp_13729_ab5714df04d25a37d5759f661c68b133",
     "src/content/blog/2025-08-20.md",
@@ -185,8 +187,6 @@
     "pnpm-lock.yaml.1663167851",
     "_tmp_30573_e474a94cec7aadcc8ed378c78c3467ab",
     "src/content/book/murder-on-the-orient-express.md",
-    "src/content/book/white-nights-book-review.md",
-    "src/content/book/the-rozabal-line-book-review.md",
     "src/content/book/the-richest-man-in-babylon.md",
     "src/content/blog/poetry-updating-a-package-to-a-new-version.md",
     "package.json.1669456632",
