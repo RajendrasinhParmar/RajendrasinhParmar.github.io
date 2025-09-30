@@ -255,7 +255,7 @@ Create environment files for different environments:
 DATABASE_URL=postgresql://prod_user:Pr0d_P@ssw0rd123@prod-db.company.com:5432/myapp_production
 API_KEY=prod_api_1234567890abcdef1234567890abcdef
 JWT_SECRET=super_secure_prod_jwt_secret_key_2024_v1_xyz789
-STRIPE_SECRET_KEY=sk_live_51ABCDEFghijklmnopQRSTUVwxyz1234567890
+STRIPE_SECRET_KEY=not_a_secret_key_sk_live_51ABCDEFghijklmnopQRSTUVwxyz1234567890
 AWS_ACCESS_KEY_ID=AKIAIOSFODNN7PRODEXAMPLE
 AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYPRODEXAMPLEKEY
 REDIS_URL=redis://prod_redis_user:RedisP@ss123@prod-redis.company.com:6379
@@ -268,7 +268,7 @@ SENTRY_DSN=https://1234567890abcdef1234567890abcdef@o123456.ingest.sentry.io/123
 DATABASE_URL=postgresql://staging_user:St@g_P@ssw0rd456@staging-db.company.com:5432/myapp_staging
 API_KEY=staging_api_abcdef1234567890abcdef1234567890
 JWT_SECRET=staging_jwt_secret_key_2024_test_version_abc123
-STRIPE_SECRET_KEY=sk_test_51ABCDEFghijklmnopQRSTUVwxyz0987654321
+STRIPE_SECRET_KEY=not_a_secret_key_sk_test_51ABCDEFghijklmnopQRSTUVwxyz0987654321
 AWS_ACCESS_KEY_ID=AKIAIOSFODNN7STAGINGEXAMPLE
 AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYSTAGINGEXAMPLE
 REDIS_URL=redis://staging_redis_user:RedisTest456@staging-redis.company.com:6379
