@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "57870e49b008e8eb",
+        "id": "ab2a97088e197b7b",
         "type": "tabs",
         "children": [
           {
-            "id": "232848840c860179",
+            "id": "e1137d9bf93b24e9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/book/the-midnight-library.md",
+                "file": "src/content/blog/github-actions-secret-setup-using-github-cli.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "the-midnight-library"
+              "title": "github-actions-secret-setup-using-github-cli"
             }
           }
         ]
@@ -172,37 +172,44 @@
       "hide-folders:Show hidden folders": false
     }
   },
-  "active": "232848840c860179",
+  "active": "e1137d9bf93b24e9",
   "lastOpenFiles": [
-    "src/content/blog/context-managers-in-python.md",
-    "src/content/book/murder-on-the-orient-express.md",
-    "src/content/book/The-India-Way.md",
-    "src/content/book/the-midnight-library.md",
-    "src/content/book/Playground.md",
-    "src/content/book/black-holes-the-reith-lectures-book-review.md",
-    "src/content/book/white-nights-book-review.md",
-    "src/content/book/the-rozabal-line-book-review.md",
+    "src/content/blog/file-permissions-for-ssh-setup.md",
+    "src/content/blog/extend-volume-associated-with-ubuntu-ec2-instance.md",
     "src/content/blog/enhancing-image-quality-with-qwen-image-edit-2509.md",
+    "src/content/blog/docker-fails-to-connect-to-internet.md",
+    "src/content/blog/docker-desktop-not-starting-in-ubuntu-24.04-lts.md",
+    "src/content/blog/desktop-entry-in-linux.md",
+    "src/content/blog/corepack-failing-for-pnpm-install.md",
+    "src/content/blog/context-managers-in-python.md",
     "src/content/blog/common-ways-to-upgrade-llm.md",
+    "src/content/blog/a-custom-decorator-for-retry-in-python.md",
+    "src/content/blog/websocket-with-nginx.md",
+    "src/content/blog/useful-linux-commands.md",
+    "src/content/blog/use-predicted-outputs-with-openai.md",
+    "src/content/blog/setup-sonarqube-on-ubuntu-ec2.md",
+    "src/content/blog/reset-sequence-of-primary-key-in-postgresql.md",
+    "src/content/blog/python-version-management-with-pyenv.md",
+    "src/content/blog/poetry-updating-a-package-to-a-new-version.md",
+    "src/content/blog/optimize-memory-management-with-dynamic-swap-in-ubuntu.md",
+    "src/content/blog/omniparser-for-pure-vision-based-gui-agent.md",
+    "src/content/blog/notebookllama-an-open-source-version-of-notebooklm.md",
+    "src/content/blog/nextjs-conf24-keynotes.md",
+    "src/content/blog/meta-ai-releases-new-quantized-versions-of-llama-3.2(1b-&-3b).md",
+    "src/content/blog/keyboard-mapping-in-linux-with-xmodmap.md",
+    "src/content/blog/github-actions-secret-setup-using-github-cli.md",
+    "src/content/blog/fix-err_network_changed-error-on-your-system-when-docker-is-installed.md",
+    "src/content/book/the-midnight-library.md",
     "_tmp_14448_bfb5fd40b66e5400ebca02a178e45334",
     "_tmp_13729_ab5714df04d25a37d5759f661c68b133",
-    "src/content/blog/2025-08-20.md",
     "package.json.2622010868",
     "pnpm-lock.yaml.1663167851",
     "_tmp_30573_e474a94cec7aadcc8ed378c78c3467ab",
-    "src/content/book/the-richest-man-in-babylon.md",
-    "src/content/blog/poetry-updating-a-package-to-a-new-version.md",
     "package.json.1669456632",
     "pnpm-lock.yaml.1609820240",
     "_tmp_94684_77f3b2fb92044a064a7c03bbd3087d00",
     "package.json.3972419112",
     "pnpm-lock.yaml.3457625016",
-    "src/content/blog/a-custom-decorator-for-retry-in-python.md",
-    "src/content/book/the-diary-of-a-ceo-the-33-laws-of-business-and-life-book-review.md",
-    "src/content/book/the-naga-warriors-1-battle-of-gokul-vol-1.md",
-    "src/content/blog/fix-err_network_changed-error-on-your-system-when-docker-is-installed.md",
-    "src/content/blog/docker-fails-to-connect-to-internet.md",
-    "src/content/blog/docker-desktop-not-starting-in-ubuntu-24.04-lts.md",
     "src/assets/images/logo-sonarqube-community.png",
     "src/assets/images/static_code_analysis.png",
     "dist/_astro/llama_3.2_quantized.2Q4wIuQv_Z5MpuU@1020w.webp",
@@ -212,13 +219,6 @@
     "dist/_astro/docker_corepack.BHzkCwWP_52wEw@1192w.webp",
     "dist/_astro/docker_corepack.BHzkCwWP_52wEw@1492w.webp",
     "dist/_astro/nextjs-conf24-ticket.B-tG3QbJ_VoeAt.webp",
-    "dist/_astro/nextjs-versioned-docs.DsfIwssC_qmO9h.webp",
-    "src/content/book/the-diary-of-a-ceo.md",
-    "src/content/book/the-naga-warriors-2-battle-of-gokul-vol-2.md",
-    "src/content/book/the-diary-of-a-ceo..md",
-    "obsidian-templates/book.md",
-    "obsidian-templates/post.md",
-    "src/content/blog/test.md",
-    "src/content/blog/setup-sonarqube-on-ubuntu-ec2.md"
+    "dist/_astro/nextjs-versioned-docs.DsfIwssC_qmO9h.webp"
   ]
 }
