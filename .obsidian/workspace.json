@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "ab2a97088e197b7b",
+        "id": "2d684322db69ed2a",
         "type": "tabs",
         "children": [
           {
-            "id": "e1137d9bf93b24e9",
+            "id": "31357010f97acc12",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/blog/github-actions-secret-setup-using-github-cli.md",
+                "file": "src/content/blog/upgrade-from-husky-v8-to-v9.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "github-actions-secret-setup-using-github-cli"
+              "title": "upgrade-from-husky-v8-to-v9"
             }
           }
         ]
@@ -172,7 +172,7 @@
       "hide-folders:Show hidden folders": false
     }
   },
-  "active": "e1137d9bf93b24e9",
+  "active": "31357010f97acc12",
   "lastOpenFiles": [
     "src/content/blog/file-permissions-for-ssh-setup.md",
     "src/content/blog/extend-volume-associated-with-ubuntu-ec2-instance.md",
@@ -187,6 +187,7 @@
     "src/content/blog/websocket-with-nginx.md",
     "src/content/blog/useful-linux-commands.md",
     "src/content/blog/use-predicted-outputs-with-openai.md",
+    "src/content/blog/upgrade-from-husky-v8-to-v9.md",
     "src/content/blog/setup-sonarqube-on-ubuntu-ec2.md",
     "src/content/blog/reset-sequence-of-primary-key-in-postgresql.md",
     "src/content/blog/python-version-management-with-pyenv.md",
@@ -199,7 +200,6 @@
     "src/content/blog/keyboard-mapping-in-linux-with-xmodmap.md",
     "src/content/blog/github-actions-secret-setup-using-github-cli.md",
     "src/content/blog/fix-err_network_changed-error-on-your-system-when-docker-is-installed.md",
-    "src/content/book/the-midnight-library.md",
     "_tmp_14448_bfb5fd40b66e5400ebca02a178e45334",
     "_tmp_13729_ab5714df04d25a37d5759f661c68b133",
     "package.json.2622010868",
