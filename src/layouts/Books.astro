@@ -1,11 +1,11 @@
 ---
+import Card from "@components/Card";
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import LinkButton from "@components/LinkButton.astro";
 import { SITE } from "@config";
 import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
-import Card from "@components/Card";
-import LinkButton from "@components/LinkButton.astro";
 import slugify from "@utils/slugify";
 import type { CollectionEntry } from "astro:content";
 
@@ -43,24 +43,24 @@ const getRatingStars = (rating: number) => {
   <Main pageTitle="Books" pageDesc="My reading journey and book reviews.">
     <ul>
       {
-        books.map(({ data }) => (
+        books.map((book) => (
           <li class="mb-6">
-            <Card href={`/books/${slugify(data)}`} frontmatter={data}>
+            <Card href={`/books/${slugify(book.data)}`} post={book}>
               <div class="book-details">
-                <p class="book-author">By {data.bookAuthor}</p>
-                {data.rating && (
+                <p class="book-author">By {book.data.bookAuthor}</p>
+                {book.data.rating && (
                   <div class="book-rating">
-                    <span class="stars">{getRatingStars(data.rating)}</span>
-                    <span class="rating-value">{data.rating}/5</span>
+                    <span class="stars">{getRatingStars(book.data.rating)}</span>
+                    <span class="rating-value">{book.data.rating}/5</span>
                   </div>
                 )}
                 <div class="book-meta">
-                  <span class={`status ${getStatusColor(data.status)}`}>
-                    {data.status}
+                  <span class={`status ${getStatusColor(book.data.status)}`}>
+                    {book.data.status}
                   </span>
-                  {data.genre && (
+                  {book.data.genre && (
                     <span class="genre">
-                      {data.genre.join(", ")}
+                      {book.data.genre.join(", ")}
                     </span>
                   )}
                 </div>

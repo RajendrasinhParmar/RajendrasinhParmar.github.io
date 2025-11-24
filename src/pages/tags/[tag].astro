@@ -1,18 +1,18 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import Card from "@components/Card";
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import { SITE } from "@config";
 import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
-import Card from "@components/Card";
-import getUniqueTags from "@utils/getUniqueTags";
-import getPostsByTag from "@utils/getPostsByTag";
-import slugify from "@utils/slugify";
-import { SITE } from "@config";
-import getSortedPosts from "@utils/getSortedPosts";
-import getSortedBooks from "@utils/getSortedBooks";
-import { filterPostByDraft, filterBookByDraft } from "@utils/common";
+import { filterBookByDraft, filterPostByDraft } from "@utils/common";
 import getBooksByTag from "@utils/getBooksByTag";
+import getPostsByTag from "@utils/getPostsByTag";
+import getSortedBooks from "@utils/getSortedBooks";
+import getSortedPosts from "@utils/getSortedPosts";
+import getUniqueTags from "@utils/getUniqueTags";
+import slugify from "@utils/slugify";
+import { type CollectionEntry, getCollection } from "astro:content";
 export interface Props {
   post: CollectionEntry<"blog" | "book">;
   tag: string;
@@ -53,13 +53,13 @@ const sortTagsBooks = getSortedBooks(tagBooks);
     <h1 slot="title" transition:name={tag}>{`Tag:${tag}`}</h1>
     <ul>
       {
-        sortTagsPost.map(({ data }) => (
-          <Card href={`/posts/${slugify(data)}`} frontmatter={data} />
+        sortTagsPost.map((post) => (
+          <Card href={`/posts/${slugify(post.data)}`} post={post} />
         ))
       }
       {
-        sortTagsBooks.map(({ data }) => (
-          <Card href={`/books/${slugify(data)}`} frontmatter={data} />
+        sortTagsBooks.map((book) => (
+          <Card href={`/books/${slugify(book.data)}`} post={book} />
         ))
       }
     </ul>

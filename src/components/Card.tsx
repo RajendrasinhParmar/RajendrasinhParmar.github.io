@@ -1,15 +1,28 @@
+import { getReadingTime } from "@utils/getReadingTime";
 import { slugifyStr } from "@utils/slugify";
-import Datetime from "./Datetime";
 import type { CollectionEntry } from "astro:content";
+import Datetime from "./Datetime";
+import ReadingTime from "./ReadingTime";
 
 export interface Props {
   href?: string;
-  frontmatter: CollectionEntry<"blog" | "book">["data"];
+  post?: CollectionEntry<"blog" | "book">;
+  frontmatter?: CollectionEntry<"blog" | "book">["data"];
   secHeading?: boolean;
 }
 
-export default function Card({ href, frontmatter, secHeading = true }: Props) {
-  const { title, pubDatetime, description } = frontmatter;
+export default function Card({
+  href,
+  post,
+  frontmatter,
+  secHeading = true,
+}: Props) {
+  // Support both old (frontmatter) and new (post) API for backward compatibility
+  const data = post?.data || frontmatter;
+  if (!data) return null;
+
+  const { title, pubDatetime, description } = data;
+  const readingTime = post?.body ? getReadingTime(post.body) : undefined;
 
   const headerProps = {
     style: { viewTransitionName: slugifyStr(title) },
@@ -28,7 +41,10 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
           <h3 {...headerProps}>{title}</h3>
         )}
       </a>
-      <Datetime datetime={pubDatetime} />
+      <div className="flex flex-wrap items-center gap-4">
+        <Datetime datetime={pubDatetime} />
+        {readingTime && <ReadingTime minutes={readingTime} />}
+      </div>
       <p>{description}</p>
     </li>
   );
