@@ -4,7 +4,7 @@ description: "Master performance tuning and cost optimisation for serverless Exp
 pubDatetime: 2025-11-22T14:00:00+05:30
 postSlug: serverless-express-api-part-5-performance-optimization
 featured: false
-draft: false
+draft: true
 tags:
   - AWS
   - Serverless

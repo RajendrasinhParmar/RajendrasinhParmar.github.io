@@ -4,7 +4,7 @@ description: "Learn to set up and deploy your first Express API with Serverless 
 pubDatetime: 2025-11-22T10:00:00+05:30
 postSlug: serverless-express-api-part-1-getting-started
 featured: false
-draft: false
+draft: true
 tags:
   - AWS
   - Serverless

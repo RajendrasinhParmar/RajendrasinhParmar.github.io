@@ -4,7 +4,7 @@ description: "Master local development for serverless Express APIs. Compare dev 
 pubDatetime: 2025-11-22T11:00:00+05:30
 postSlug: serverless-express-api-part-2-development-workflow
 featured: false
-draft: false
+draft: true
 tags:
   - AWS
   - Serverless
