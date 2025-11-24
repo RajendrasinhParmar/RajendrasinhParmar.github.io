@@ -1,6 +1,7 @@
-import satori, { type SatoriOptions } from "satori";
 import { Resvg } from "@resvg/resvg-js";
 import { type CollectionEntry } from "astro:content";
+import satori, { type SatoriOptions } from "satori";
+import bookOgImage from "./og-templates/book";
 import postOgImage from "./og-templates/post";
 import siteOgImage from "./og-templates/site";
 
@@ -50,6 +51,11 @@ function svgBufferToPngBuffer(svg: string) {
 
 export async function generateOgImageForPost(post: CollectionEntry<"blog">) {
   const svg = await satori(postOgImage(post), options);
+  return svgBufferToPngBuffer(svg);
+}
+
+export async function generateOgImageForBook(book: CollectionEntry<"book">) {
+  const svg = await satori(bookOgImage(book), options);
   return svgBufferToPngBuffer(svg);
 }
 

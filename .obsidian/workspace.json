@@ -174,6 +174,8 @@
   },
   "active": "36ef4e805fae5e56",
   "lastOpenFiles": [
+    "src/utils/og-templates/book.tsx",
+    "linkedin-post.md",
     "dist/_astro/serverless_banner.BEpXbdmP_2oS5dh@837w.webp",
     "dist/_astro/serverless_banner.BEpXbdmP_2oS5dh@1137w.webp",
     "dist/_astro/serverless_banner.BEpXbdmP_2oS5dh@1437w.webp",
@@ -184,7 +186,6 @@
     "dist/_astro/llama_3.2_quantized.2Q4wIuQv_Z5MpuU@1320w.webp",
     "dist/_astro/llama_3.2_quantized.2Q4wIuQv_Z5MpuU@1620w.webp",
     "dist/Prompt2_Qwen_Image_Edit_1758655125@884w.webp",
-    "dist/Prompt2_Qwen_Image_Edit_1758655125.webp",
     "dist/_jampack",
     "dist/sitemap-0.xml",
     "dist/sitemap-index.xml",
@@ -218,7 +219,6 @@
     "src/content/blog/docker-fails-to-connect-to-internet.md",
     "src/content/blog/docker-desktop-not-starting-in-ubuntu-24.04-lts.md",
     "src/content/blog/desktop-entry-in-linux.md",
-    "src/content/blog/corepack-failing-for-pnpm-install.md",
-    "src/content/blog/context-managers-in-python.md"
+    "src/content/blog/corepack-failing-for-pnpm-install.md"
   ]
 }

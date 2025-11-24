@@ -6,7 +6,7 @@ import Tag from "@components/Tag.astro";
 import Datetime from "@components/Datetime";
 import ReadingTime from "@components/ReadingTime";
 import type { CollectionEntry } from "astro:content";
-import { slugifyStr } from "@utils/slugify";
+import { slugifyStr, default as slugify } from "@utils/slugify";
 import { getReadingTime } from "@utils/getReadingTime";
 
 export interface Props {
@@ -22,7 +22,7 @@ const readingTime = getReadingTime(book.body);
 
 const ogImageUrl = typeof ogImage === "string" ? ogImage : ogImage?.src;
 const ogUrl = new URL(
-  ogImageUrl ?? `/books/${slugifyStr(title)}.png`,
+  ogImageUrl ?? `/books/${slugify(book.data)}.png`,
   Astro.url.origin
 ).href;
 
