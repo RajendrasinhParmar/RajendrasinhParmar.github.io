@@ -4,7 +4,7 @@ description: "Implement comprehensive monitoring, logging, and security for serv
 pubDatetime: 2025-11-22T13:00:00+05:30
 postSlug: serverless-express-api-part-4-monitoring-security
 featured: false
-draft: true
+draft: false
 tags:
   - AWS
   - Serverless
