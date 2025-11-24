@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && jampack ./dist",
+    "build": "PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 astro build && jampack ./dist",
     "build:check": "astro check && astro build && jampack ./dist",
     "preview": "astro preview",
     "sync": "astro sync",
