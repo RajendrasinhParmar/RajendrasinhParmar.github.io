@@ -16,7 +16,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@astrojs/markdown-remark": "^6.3.9",
+    "@astrojs/markdown-remark": "^6.3.10",
     "@astrojs/react": "^4.4.2",
     "@astrojs/rss": "^4.0.14",
     "@astrojs/sitemap": "^3.6.0",
@@ -24,10 +24,12 @@
     "@divriots/jampack": "^0.34.0",
     "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/typography": "^0.5.13",
-    "astro": "^5.16.0",
+    "astro": "^5.16.6",
     "fuse.js": "^6.6.2",
     "github-slugger": "^2.0.0",
+    "hastscript": "^9.0.1",
     "mermaid": "^11.12.1",
+    "playwright": "^1.56.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "rehype-mermaid": "^3.0.0",
@@ -37,10 +39,10 @@
     "sharp": "^0.34.5",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.4.5",
-    "playwright": "^1.56.1"
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.5",
+    "@astrojs/check": "^0.9.6",
     "@types/github-slugger": "^1.3.0",
     "@types/react": "^18.3.3",
     "@typescript-eslint/parser": "^6.21.0",

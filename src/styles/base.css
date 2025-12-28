@@ -93,6 +93,21 @@
     @apply hidden;
   }
 
+  /* ===== image credits ===== */
+  .prose figure.image-with-credit {
+    @apply my-4;
+  }
+  .prose figure.image-with-credit img {
+    @apply mb-0;
+  }
+  .prose figcaption.image-credit {
+    @apply text-xs text-skin-base opacity-70 italic text-center mt-2;
+    @apply not-italic;
+  }
+  .prose figcaption.image-credit::before {
+    content: "📷 ";
+  }
+
   /* ===== scrollbar ===== */
   html {
     overflow-y: scroll;
