@@ -6,8 +6,13 @@ postSlug: "deep-work-book-summary"
 featured: false
 draft: false
 tags:
-  - "bookreview"
-  - "english"
+  - "book-summary"
+  - "English"
+  - "Self-help"
+  - "Management"
+  - "Non-fiction"
+  - "Leadership"
+  - "Philosophy"
 bookAuthor: "Cal Newport"
 rating: 4
 genre:
@@ -23,7 +28,7 @@ status: "completed"
 
 <!-- credit: Image referenced from goodreads -->
 
-A Book Summary of 'Deep Work'
+A Book Summary of "Deep Work"
 
 Cal Newport's "Deep Work" explains the idea of focused(deep) work and rules or strategies for the same. The book is divided into just 2 parts along with an introduction.
 
