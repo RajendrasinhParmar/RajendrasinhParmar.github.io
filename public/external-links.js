@@ -41,20 +41,30 @@
   }
 
   // Also run after any dynamic content changes (for SPAs)
-  const observer = new MutationObserver(function (mutations) {
-    let shouldCheck = false;
-    mutations.forEach(function (mutation) {
-      if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
-        shouldCheck = true;
+  function setupObserver() {
+    if (!document.body) {
+      // Wait for body to be available
+      setTimeout(setupObserver, 100);
+      return;
+    }
+
+    const observer = new MutationObserver(function (mutations) {
+      let shouldCheck = false;
+      mutations.forEach(function (mutation) {
+        if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
+          shouldCheck = true;
+        }
+      });
+      if (shouldCheck) {
+        makeExternalLinksOpenInNewTab();
       }
     });
-    if (shouldCheck) {
-      makeExternalLinksOpenInNewTab();
-    }
-  });
 
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true,
-  });
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+  }
+
+  setupObserver();
 })();
