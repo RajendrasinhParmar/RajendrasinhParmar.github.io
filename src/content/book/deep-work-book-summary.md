@@ -4,7 +4,7 @@ description: "A Book Review of 'Deep Work'"
 pubDatetime: 2026-01-12T00:34:00+05:30
 postSlug: "deep-work-book-summary"
 featured: false
-draft: true
+draft: false
 tags:
   - "bookreview"
   - "english"
