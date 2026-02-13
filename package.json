@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
+    "prebuild": "mkdir -p public/assets/images && cp -f src/assets/images/sudonovagame.png src/assets/images/sudonova.png public/assets/images/ 2>/dev/null || true",
     "build": "astro build && jampack ./dist",
     "build:check": "astro check && astro build && jampack ./dist",
     "preview": "astro preview",

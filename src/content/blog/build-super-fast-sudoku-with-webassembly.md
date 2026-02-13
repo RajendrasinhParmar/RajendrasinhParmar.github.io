@@ -4,7 +4,7 @@ description: A frontend-only Sudoku game with React and Rust/WASM—why I built 
 pubDatetime: 2026-02-13T11:27:14+05:30
 postSlug: build-super-fast-sudoku-with-webassembly
 featured: false
-draft: true
+draft: false
 tags:
   - sudoku
   - game
@@ -12,37 +12,90 @@ tags:
   - wasm
 ---
 
-![Photo by Leonid Privalov on Unsplash](https://images.unsplash.com/photo-1692263340228-7675642478ac?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2NDU1OTF8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzA5NjIyMzV8&ixlib=rb-4.1.0&q=85&w=900&h=300)
+<img src="/assets/images/sudonovagame.png" alt="SudoNova Game page" style="max-width: 600px; width: auto; height: 450px;" />
 
 ## Table of contents
 
 ## Introduction
 
-I wanted a Sudoku app that felt fast and worked offline—something I could open on my phone and play without waiting on a server or fighting a sluggish grid. So I built one. React for the UI, Rust compiled to WebAssembly for the core logic, and no backend. The goal was simple: a production-ready puzzle that runs entirely in the browser and leans on WASM where performance actually matters.
+I wanted to build a Sudoku app. When I explored the web, I found countless options—many of them work great. But I wanted to build something for fun, to put my knowledge and curiosity to work. That got me thinking: what if I focused on performance and speed? What if I pushed the boundaries of what's possible in the browser?
 
-Going frontend-only was a deliberate choice. No server means no latency, no auth, no database. You deploy a static site; the puzzle engine lives in the browser. For a game like Sudoku, that’s enough. Performance mattered because the engine does a lot of repetitive work—validating moves, computing candidates for 81 cells, running the solver for hints and generation. On a mid-range phone, doing that in plain JavaScript would feel sluggish. I wanted taps to feel instant and generation to never block the UI.
+The result: a fast, offline-first Sudoku app built with React and Rust/WASM, running entirely in the browser with no backend.
+
+**Try it live**: [https://sudonova.rajendrasinh.com/](https://sudonova.rajendrasinh.com/)
+
+## At a glance
+
+- **Goal**: fast, offline-first Sudoku that runs entirely in the browser.
+- **UI**: React renders the grid, keypad, and game chrome (Non interactive elements of the application).
+- **Engine**: Rust + WebAssembly handle anything performance-sensitive.
+- **Concurrency**: a Web Worker owns puzzle generation so the main thread stays responsive.
+
+In very rough pseudocode, the app behaves like this:
+
+```text
+onAppStart():
+  renderEmptyBoard()
+  initWasmEngineInBackground()
+
+onCellTap(cell):
+  selectCell(cell)
+
+onNumberTap(n):
+  board = engine.applyMove(board, selectedCell, n)
+  updateUI(board)
+  if !engine.isMoveValid(board, selectedCell, n):
+    showErrorFeedback()
+
+onHintTap():
+  hint = engine.getHint(board)
+  highlightHint(hint)
+
+onNewGameTap(difficulty):
+  showGeneratingState()
+  board = await engineWorker.generatePuzzle(difficulty)
+  hideGeneratingState()
+  updateUI(board)
+```
 
 ## Choosing the Stack
 
-React was “good enough” and I didn’t second-guess it. I needed a familiar component model and tooling; the real work was in the engine and keeping the UI thin. Chasing a newer framework wouldn’t have moved the needle. The bottleneck was never React—it was the logic underneath.
+### The JavaScript problem
 
-Rust and WebAssembly handle everything that has to be fast and correct: puzzle generation, solving, hints, and candidate computation. I chose Rust for the type system and the testing story. The solver, generator, and hint logic are easy to reason about and test with `cargo test`, and wasm-bindgen gives a clean JS boundary without fighting a runtime. No GC, no surprises—just a small, well-tested core that the React app calls over a thin API.
+A Sudoku engine does repetitive work—validating moves, computing candidates for 81 cells, running solvers for hints and generation. On mobile, plain JavaScript struggles: GC pauses cause stutters, and the interpreted nature means even optimized code runs slower than compiled alternatives.
 
-Skipping a backend was intentional. Puzzles are generated in the browser, state lives in memory, and the PWA caches assets for offline. Static site, deploy anywhere. No server to maintain or scale.
+### WASM + Rust:
 
-I used wasm-pack with the **web** target instead of **bundler**. The web target outputs ES modules that the browser loads directly. That played nicely with Vite—no special WASM plugin, just a dynamic import. The app loads the engine asynchronously and only marks ready when WASM has initialized, so the UI renders immediately and hints appear when the engine is ready. The bundler target would have tied me to a plugin and a different loading story; the web target kept things simple and explicit.
+The performance-critical choice. Handles generation, solving, hints, and candidates. WASM runs at near-native speed, compiled ahead of time. Rust adds type safety, zero-cost abstractions, and no garbage collector—perfect for hot paths that run thousands of times per game.
+
+Rust's type system and `cargo test` make the core logic easy to reason about. wasm-bindgen provides a clean JS boundary. No GC, no runtime surprises—just predictable, fast code.
+
+**Performance comparison**:
+
+- **JavaScript**: ~50-100ms puzzle generation, perceptible lag on candidate computation, GC pauses cause stutters
+- **WASM/Rust**: ~10-20ms puzzle generation, instant candidate computation, no GC pauses
+
+### React
+
+I was familiar with React. The main bottleneck was the Sudoku engine, So decided to go with React for the first release. Easy to optimize with `useMemo` and `useCallback`.
+
+### No backend
+
+Puzzles generate in-browser, state lives in memory, PWA caches for offline. Static site, deploy anywhere.
+
+**wasm-pack web target**: Outputs ES modules that load directly in the browser. Works with Vite via dynamic import—no WASM plugin needed. Engine loads asynchronously; UI renders immediately, hints appear when ready.
 
 ## Architecture
 
-The app runs entirely in the browser. The React UI talks to a single engine facade. Hints and candidate computation call WASM on the main thread—short, non-blocking work. Puzzle generation runs in a Web Worker that loads its own WASM instance so the main thread never blocks when you tap “New Game.” The diagram below sums it up.
+React UI → engine facade → WASM (main thread for hints/candidates) or Web Worker (for generation). The diagram below shows the flow:
 
 ```mermaid
 flowchart TB
   subgraph Main["Main thread"]
-    UI[React UI\nBoardGrid, Keypad, Toolbar]
-    Engine[Engine facade\ninit, getHint, computeCandidates, generatePuzzle]
+    UI[React UI<br/>BoardGrid, Keypad, Toolbar]
+    Engine[Engine facade<br/>init, getHint, computeCandidates]
     WC[EngineWorkerClient]
-    WASM_Main[WASM\nget_hint, compute_candidates]
+    WASM_Main[WASM<br/>get_hint, compute_candidates]
     UI <-->|state & events| Engine
     Engine -->|getHint, computeCandidates| WASM_Main
     Engine -->|generatePuzzle| WC
@@ -53,35 +106,91 @@ flowchart TB
 
   subgraph Worker["Web Worker"]
     SudokuWorker[sudokuWorker]
-    WASM_Worker[WASM\ngenerate_puzzle, set_seed]
+    WASM_Worker[WASM<br/>generate_puzzle, set_seed]
     SudokuWorker --> WASM_Worker
   end
 ```
 
-On the main thread, React holds board state and handles input. The engine runs `initWasm()` on first use (e.g. via `requestIdleCallback`), then uses the same WASM module for hints and candidates. When the user taps “New Game”, the engine delegates to the worker client, which posts a message to the worker. The worker initializes WASM once, calls `generate_puzzle(difficulty)`, and posts the board back. The UI shows “Generating puzzle…” until the promise resolves.
+### Engine boundaries in code-ish form
+
+The UI only calls a tiny engine surface; everything else stays hidden behind it:
+
+```typescript
+// main thread – used by React components
+type Board = number[][];
+
+export async function initEngine() {
+  await initWasmIfNeeded(); // one-time WASM init
+  await initWorkerIfNeeded(); // one-time worker init
+}
+
+export function computeCandidates(board: Board, cell: Cell) {
+  return wasm_compute_candidates(board, cell);
+}
+
+export function getHint(board: Board): Hint {
+  return wasm_get_hint(board);
+}
+
+export function generatePuzzle(difficulty: Difficulty): Promise<Board> {
+  return workerRequest({ type: "generate", difficulty });
+}
+```
+
+And on the worker side:
+
+```typescript
+// sudokuWorker.ts (runs off the main thread)
+self.onmessage = async event => {
+  if (event.data.type === "generate") {
+    await initWasmIfNeeded();
+    const board = wasm_generate_puzzle(event.data.difficulty);
+    self.postMessage({ board });
+  }
+};
+```
+
+**Flow**: React holds board state. Engine initializes WASM on first use (via `requestIdleCallback`). "New Game" → worker client → worker posts message → worker WASM generates puzzle → posts board back → UI updates.
 
 ## Performance Thinking
 
-Moving the core logic into WASM did two things: the hot paths (candidates, hints, generation) run in compiled code, and the boundary between UI and engine stayed clear so both sides could be optimized independently.
+**WASM**: Hot paths run in compiled code. Candidates and hints run on the main thread (fast enough to be non-blocking), while generation runs in a worker to keep the UI responsive. Clear UI/engine boundary enables independent optimization.
 
-I cared more about perceived performance than micro-benchmarks. A fast solver is pointless if the board feels laggy on tap. So I focused on quick visual feedback on input—a success pulse, an error shake, completion flashes. Puzzle generation runs in a Web Worker that loads its own WASM instance, so the main thread never blocks when you tap “New Game.” I avoided extra frameworks; React, Vite, and WASM were enough. Smaller bundle, fewer moving parts.
+**Perceived performance**: Visual feedback (success pulse, error shake) matters more than raw solver speed.
 
-The app was designed mobile-first from the start. Touch targets, layout, and interaction were all thought through for small screens first. That’s not an afterthought—it shapes how you build the keypad, the toolbar, and the way state updates hit the UI.
+**Mobile-first**: Touch targets, layout, and interactions designed for small screens from the start. Minimal stack: React, Vite, WASM—smaller bundle, fewer moving parts.
+
+### Lighthouse Results
+
+The performance-focused architecture paid off. Here are the Lighthouse scores:
+
+![Lighthouse Performance Metrics](@assets/images/sudonova.png)
+
+- **Performance**: 99/100
+- **Accessibility**: 100/100
+- **Best Practices**: 100/100
+- **SEO**: 100/100
+
+The near-perfect performance score validates the WASM approach—instant interactions, non-blocking generation, and optimized bundle size all contribute to a fast, responsive experience.
 
 ## UX and Polish
 
-On mobile, typing into a 9×9 grid is awkward. I added a number keypad at the bottom: big digits, tap to enter. Select a cell, tap a number. The keypad also has Clear, Notes, and Hint so the main actions are one tap away. For mobile, a dedicated Clear button matters more than keyboard shortcuts. Touch was considered throughout—large hit areas, no hover-only behaviour, feedback that works without a cursor. PWA support (installable, standalone, offline) makes it feel like a real puzzle app once it’s on your home screen.
+**Keypad**: Bottom-mounted number pad for mobile. Tap cell → tap number. Includes Clear, Notes, Hint—one tap away.
+
+**Touch-first**: Large hit areas, no hover-only behavior, visual feedback without cursor. PWA support (installable, offline) makes it feel native once installed.
 
 ## Lessons Learned
 
-WASM initialization had a few gotchas. It has to be async; you can only call into the module after `init()` completes. I used a wrapper that guards against double-init and deferred loading with `requestIdleCallback` (or `requestAnimationFrame`) so the first paint isn’t blocked. If the component unmounts before init finishes, a `cancelled` flag avoids calling `setWasmReady` and prevents leaks. Explicit control beat “magic” auto-loading every time.
+**WASM init**: Must be async. Guard against double-init, defer with `requestIdleCallback` to avoid blocking first paint. Handle unmounts with a `cancelled` flag to prevent leaks. Explicit control > magic auto-loading.
 
-React wasn’t the bottleneck. The expensive work lives in WASM and the worker. With `useCallback` and `useMemo` where it mattered, re-renders stayed cheap. The lesson was to optimize where the cost actually is, not where the framework gets the blame.
+**React wasn't the bottleneck**: Expensive work is in WASM/worker. `useCallback`/`useMemo` where needed kept re-renders cheap. Optimize where the cost actually is.
 
-Perceived performance mattered more than raw speed. Users notice instant feedback and non-blocking generation more than a solver that’s twice as fast. Investing in responsiveness and visual feedback paid off more than squeezing the last bit out of the engine.
+**Perceived > raw speed**: Instant feedback and non-blocking generation matter more than a 2x faster solver.
 
 ## Closing Thoughts
 
-Next I’d improve puzzle quality and difficulty—tuning removal counts, uniqueness, and maybe a stronger solver for better hints. I’d consider light animations or an experiment with SolidJS to see how it feels, but React has been fine so far.
+**Next steps**: Improve puzzle quality (removal counts, uniqueness), stronger solver for hints, maybe light animations or SolidJS experiment.
 
-The main takeaway: small, focused apps are underrated. No backend, no auth, one problem (Sudoku in the browser), one goal (fast, clean, mobile-first). If you’ve been putting off a small idea because it doesn’t feel “full-stack” enough, it’s worth a shot. Sometimes the best thing to build is the one that does one thing well.
+**Takeaway**: Small, focused apps are underrated. No backend, no auth, one problem, one goal. If you've been putting off a small idea because it doesn't feel "full-stack" enough, it's worth a shot. Sometimes the best thing to build is the one that does one thing well.
+
+**Try it**: [https://sudonova.rajendrasinh.com/](https://sudonova.rajendrasinh.com/)
