@@ -1,8 +1,9 @@
 name: Deploy Astro site to GitHub Pages
 
 on:
-  push:
-    branches: [ main ]  # or the branch you use
+  # TODO: making this manual to make sure the MAC related update works
+  # push:
+  #   branches: [ main ]  # or the branch you use
   workflow_dispatch:
 
 permissions:

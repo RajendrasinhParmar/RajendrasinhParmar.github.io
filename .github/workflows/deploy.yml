@@ -1,10 +1,11 @@
 name: Deploy to GitHub Pages
 
 on:
+  # TODO: making this manual to make sure the MAC related update works
   # Trigger the workflow every time you push to the `main` branch
   # Using a different branch name? Replace `main` with your branch's name
-  push:
-    branches: [main]
+  # push:
+  #   branches: [main]
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
