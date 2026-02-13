@@ -85,8 +85,157 @@ const ogUrl = new URL(
   .post-title {
     @apply text-2xl font-semibold text-skin-accent;
   }
+  /* Scale Mermaid diagrams to article width instead of tiny default size */
+  #article :global(.mermaid) {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+  }
+  #article :global(.mermaid svg) {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    min-width: min(100%, 480px);
+  }
+  /* Light mode: override flowchart edge/link colors to grey for better visibility */
+  html[data-theme="light"] #article :global(.mermaid .flowchart-link) {
+    stroke: #666 !important;
+  }
+  html[data-theme="light"] #article :global(.mermaid .flowchart-link path) {
+    stroke: #666 !important;
+  }
+  html[data-theme="light"] #article :global(.mermaid .arrowheadPath) {
+    fill: #666 !important;
+    stroke: #666 !important;
+  }
+  html[data-theme="light"] #article :global(.mermaid marker path) {
+    fill: #666 !important;
+    stroke: #666 !important;
+  }
+  /* Dark mode: ensure Mermaid diagrams have proper contrast */
+  html[data-theme="dark"] #article :global([data-mermaid-wrapper]) {
+    background: transparent;
+  }
+  html[data-theme="dark"] #article :global(.mermaid svg) {
+    background: transparent;
+  }
 </style>
 
+<script>
+  import mermaid from "mermaid";
+
+  function getTheme() {
+    return document.documentElement.getAttribute("data-theme") === "dark"
+      ? "dark"
+      : "default";
+  }
+
+  function storeMermaidSources() {
+    const container = document.querySelector("#article");
+    if (!container) return;
+
+    const mermaidElements = container.querySelectorAll("pre.mermaid");
+    mermaidElements.forEach((pre) => {
+      // Wrap each pre.mermaid in a div and store the source
+      if (!pre.parentElement?.hasAttribute("data-mermaid-wrapper")) {
+        const wrapper = document.createElement("div");
+        wrapper.setAttribute("data-mermaid-wrapper", "true");
+        wrapper.setAttribute("data-mermaid-source", pre.textContent || "");
+        pre.parentNode?.insertBefore(wrapper, pre);
+        wrapper.appendChild(pre);
+      }
+    });
+  }
+
+  function restoreMermaidSources() {
+    const container = document.querySelector("#article");
+    if (!container) return;
+
+    const wrappers = container.querySelectorAll("[data-mermaid-wrapper]");
+    wrappers.forEach((wrapper) => {
+      const source = wrapper.getAttribute("data-mermaid-source");
+      if (source) {
+        // Replace current content (SVG) with original pre.mermaid
+        wrapper.innerHTML = `<pre class="mermaid">${source}</pre>`;
+      }
+    });
+  }
+
+  let initialized = false;
+  function initializeMermaid() {
+    if (!initialized) {
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: getTheme(),
+        securityLevel: "loose",
+        flowchart: { useMaxWidth: true },
+        sequence: { useMaxWidth: true },
+        themeVariables: {
+          fontSize: "16px",
+          fontFamily: "arial, sans-serif",
+        },
+      });
+      initialized = true;
+    } else {
+      // Update theme if already initialized
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: getTheme(),
+        securityLevel: "loose",
+        flowchart: { useMaxWidth: true },
+        sequence: { useMaxWidth: true },
+        themeVariables: {
+          fontSize: "16px",
+          fontFamily: "arial, sans-serif",
+        },
+      });
+    }
+  }
+
+  function runMermaid() {
+    const container = document.querySelector("#article");
+    if (!container) return;
+
+    // Store sources before first run
+    storeMermaidSources();
+
+    initializeMermaid();
+
+    const mermaidElements = container.querySelectorAll("pre.mermaid");
+    if (mermaidElements.length > 0) {
+      mermaid.run({ nodes: mermaidElements });
+    }
+  }
+
+  function runMermaidWithThemeChange() {
+    // Restore original sources, then re-run with new theme
+    restoreMermaidSources();
+    runMermaid();
+  }
+
+  // Initial run
+  runMermaid();
+
+  // Re-run on page load (view transitions)
+  document.addEventListener("astro:page-load", runMermaid);
+
+  // Watch for theme changes
+  const themeObserver = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (
+        mutation.type === "attributes" &&
+        mutation.attributeName === "data-theme"
+      ) {
+        runMermaidWithThemeChange();
+      }
+    });
+  });
+
+  themeObserver.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["data-theme"],
+  });
+</script>
 <script is:inline>
   /* When the user clicks on the "Back to Top" button,
    * scroll to the top of the document */

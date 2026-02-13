@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "6cc36feae6656506",
+        "id": "5279e08a95ce39bb",
         "type": "tabs",
         "children": [
           {
-            "id": "ff04b47db3a93041",
+            "id": "4e0ac2e69e7d24da",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/book/deep-work-book-summary.md",
+                "file": "src/content/blog/build-super-fast-sudoku-with-webassembly.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "deep-work-book-summary"
+              "title": "build-super-fast-sudoku-with-webassembly"
             }
           }
         ]
@@ -88,8 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 523.5,
-    "collapsed": true
+    "width": 281.5
   },
   "right": {
     "id": "079e6266523f977e",
@@ -173,29 +172,31 @@
       "hide-folders:Show hidden folders": false
     }
   },
-  "active": "ff04b47db3a93041",
+  "active": "4e0ac2e69e7d24da",
   "lastOpenFiles": [
-    "pnpm-lock.yaml.2938504155",
-    "node_modules/@tailwindcss",
-    "node_modules/@resvg",
-    "node_modules/@divriots",
-    "node_modules/@typescript-eslint",
-    "node_modules/@types",
-    "node_modules/@astrojs",
-    "node_modules",
-    "_tmp_137547_c832ebcc40ba5a883e55c0cf29329faf",
-    "dist/about/index.html",
-    "dist/about",
-    "dist/_astro/startup-program_for_keymap.B2_-v0ze.png",
-    "dist/_astro/serverless_banner.BEpXbdmP.png",
-    "dist/_astro/nextjs-versioned-docs.DsfIwssC.png",
-    "dist/_astro/nextjs-dev-tests.GlVosELJ.png",
-    "dist/_astro/nextjs-conf24-ticket.B-tG3QbJ.png",
-    "dist/_astro/nextjs-build-tests.CjniAtqV.png",
-    "dist/_astro/logo-sonarqube-community.CkaXM8LO.png",
-    "dist/_astro/llama_3.2_quantized.2Q4wIuQv.png",
-    "dist/_astro/llama-3.2-performance.B8kp6KkK.png",
-    "dist/_astro/docker_corepack.BHzkCwWP.webp",
+    "dist/_astro/VoiceAgents.Do6gSAOC_yn2eX@808w.webp",
+    "dist/_astro/VoiceAgents.Do6gSAOC_yn2eX@1108w.webp",
+    "dist/_astro/serverless_banner.BEpXbdmP_2oS5dh@837w.webp",
+    "dist/_astro/serverless_banner.BEpXbdmP_2oS5dh@1137w.webp",
+    "dist/_astro/serverless_banner.BEpXbdmP_2oS5dh@1437w.webp",
+    "dist/_astro/serverless_banner.BEpXbdmP_2oS5dh@1737w.webp",
+    "dist/_astro/serverless_banner.BEpXbdmP_2oS5dh@2037w.webp",
+    "dist/_astro/serverless_banner.BEpXbdmP_2oS5dh@2337w.webp",
+    "dist/_astro/llama_3.2_quantized.2Q4wIuQv_Z5MpuU@1020w.webp",
+    "dist/_astro/llama_3.2_quantized.2Q4wIuQv_Z5MpuU@1320w.webp",
+    "dist/_astro/llama_3.2_quantized.2Q4wIuQv_Z5MpuU@1620w.webp",
+    "dist/_jampack",
+    "dist/sitemap-index.xml",
+    "dist/sitemap-0.xml",
+    "dist/index.html",
+    "dist/tags/index.html",
+    "dist/tags/voiceagents/index.html",
+    "dist/tags/voiceagents",
+    "dist/tags/ubuntu/index.html",
+    "dist/tags/ubuntu",
+    "dist/tags/twilio/index.html",
+    "src/content/blog/build-super-fast-sudoku-with-webassembly.md",
+    "src/content/book/deep-work-book-summary.md",
     "src/content/blog/warm-call-transfer-in-voice-agents.md",
     "src/content/blog/ai-voice-agents-overview.md",
     "IMAGE_CREDITS.md",
@@ -217,9 +218,7 @@
     "src/content/blog/serverless-express-api-part-2-development-workflow.md",
     "src/content/blog/github-actions-secret-setup-using-github-cli.md",
     "src/content/blog/nextjs-conf24-keynotes.md",
-    "src/content/book/deep-work-book-summary.md",
     "src/content/book/the-midnight-library.md",
-    "src/content/book/the-naga-warriors-2-battle-of-gokul-vol-2.md",
-    "src/content/book/murder-on-the-orient-express.md"
+    "src/content/book/the-naga-warriors-2-battle-of-gokul-vol-2.md"
   ]
 }

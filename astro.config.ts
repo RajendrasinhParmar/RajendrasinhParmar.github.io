@@ -36,7 +36,9 @@ export default defineConfig({
       [
         rehypeMermaid,
         {
-          strategy: "img-svg",
+          // Use pre-mermaid (client-side) so build doesn't rely on Playwright.
+          // img-svg/inline-svg use Playwright and can fail on macOS, leaving post body empty.
+          strategy: "pre-mermaid",
         },
       ],
       rehypeImageCredits,
