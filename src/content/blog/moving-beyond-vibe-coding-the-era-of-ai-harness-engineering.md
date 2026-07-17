@@ -4,7 +4,7 @@ description: The model is smart; it's the environment around it that makes it re
 pubDatetime: 2026-07-17T07:57:46+05:30
 postSlug: moving-beyond-vibe-coding-the-era-of-ai-harness-engineering
 featured: false
-draft: true
+draft: false
 tags:
   - AI
   - Harness
