@@ -4,31 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "5279e08a95ce39bb",
+        "id": "c36df0494ab781b0",
         "type": "tabs",
         "children": [
           {
-            "id": "4e0ac2e69e7d24da",
+            "id": "037c3f0d0c01d380",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "src/content/blog/build-super-fast-sudoku-with-webassembly.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "build-super-fast-sudoku-with-webassembly"
+              "title": "New tab"
             }
           }
         ]
@@ -172,22 +158,22 @@
       "hide-folders:Show hidden folders": false
     }
   },
-  "active": "2023ae4a43e7c9f0",
+  "active": "037c3f0d0c01d380",
   "lastOpenFiles": [
-    "dist/_astro/VoiceAgents.Do6gSAOC_yn2eX@808w.webp",
-    "dist/_astro/VoiceAgents.Do6gSAOC_yn2eX@1108w.webp",
-    "dist/_astro/serverless_banner.BEpXbdmP_2oS5dh@837w.webp",
-    "dist/_astro/serverless_banner.BEpXbdmP_2oS5dh@1137w.webp",
-    "dist/_astro/serverless_banner.BEpXbdmP_2oS5dh@1437w.webp",
-    "dist/_astro/serverless_banner.BEpXbdmP_2oS5dh@1737w.webp",
-    "dist/_astro/serverless_banner.BEpXbdmP_2oS5dh@2037w.webp",
-    "dist/_astro/serverless_banner.BEpXbdmP_2oS5dh@2337w.webp",
-    "dist/_astro/llama_3.2_quantized.2Q4wIuQv_Z5MpuU@1020w.webp",
-    "dist/_astro/llama_3.2_quantized.2Q4wIuQv_Z5MpuU@1320w.webp",
-    "dist/_astro/llama_3.2_quantized.2Q4wIuQv_Z5MpuU@1620w.webp",
+    "dist/_astro/VoiceAgents.Do6gSAOC_VocTj@808w.webp",
+    "dist/_astro/VoiceAgents.Do6gSAOC_VocTj@1108w.webp",
+    "dist/_astro/serverless_banner.BEpXbdmP_29r81r@837w.webp",
+    "dist/_astro/serverless_banner.BEpXbdmP_29r81r@1137w.webp",
+    "dist/_astro/serverless_banner.BEpXbdmP_29r81r@1437w.webp",
+    "dist/_astro/serverless_banner.BEpXbdmP_29r81r@1737w.webp",
+    "dist/_astro/serverless_banner.BEpXbdmP_29r81r@2037w.webp",
+    "dist/_astro/serverless_banner.BEpXbdmP_29r81r@2337w.webp",
+    "dist/_astro/llama_3.2_quantized.2Q4wIuQv_Z1Q8LtE@1020w.webp",
+    "dist/_astro/llama_3.2_quantized.2Q4wIuQv_Z1Q8LtE@1320w.webp",
+    "dist/_astro/llama_3.2_quantized.2Q4wIuQv_Z1Q8LtE@1620w.webp",
     "dist/_jampack",
-    "dist/sitemap-index.xml",
     "dist/sitemap-0.xml",
+    "dist/sitemap-index.xml",
     "dist/index.html",
     "dist/tags/index.html",
     "dist/tags/wasm/index.html",
@@ -195,30 +181,30 @@
     "dist/tags/voiceagents/index.html",
     "dist/tags/voiceagents",
     "dist/tags/ubuntu/index.html",
-    "src/content/blog/build-super-fast-sudoku-with-webassembly.md",
-    "src/content/book/deep-work-book-summary.md",
-    "src/content/blog/warm-call-transfer-in-voice-agents.md",
-    "src/content/blog/ai-voice-agents-overview.md",
-    "IMAGE_CREDITS.md",
-    "src/content/blog/useful-linux-commands.md",
-    "src/content/blog/corepack-failing-for-pnpm-install.md",
-    "src/content/blog/context-managers-in-python.md",
+    "src/content/blog/niyatva-the-name-and-the-logo.md",
+    "src/content/blog/moving-beyond-vibe-coding-the-era-of-ai-harness-engineering.md",
+    "src/content/blog/System_Architecture_Diagram.md",
     "src/content/blog/AI_Voice_Agent_Proposal.md",
-    "src/content/blog/a-custom-decorator-for-retry-in-python.md",
-    "src/content/blog/serverless-express-api-part-1-getting-started.md",
-    "linkedin-post.md",
-    "src/content/blog/mermaid-diagrams-test.md",
-    "src/content/blog/serverless-express-api-part-3-production-deployment-OLD.md",
+    "src/content/blog/websocket-with-nginx.md",
+    "src/content/blog/useful-linux-commands.md",
+    "src/content/blog/use-predicted-outputs-with-openai.md",
+    "src/content/blog/upgrade-from-husky-v8-to-v9.md",
+    "src/content/blog/setup-sonarqube-on-ubuntu-ec2.md",
     "src/content/blog/serverless-express-api-part-5-performance-optimization.md",
     "src/content/blog/serverless-express-api-part-4-monitoring-security.md",
     "src/content/blog/serverless-express-api-part-3-multi-stage-deployments.md",
-    "src/content/blog/node-express-api-development-with-serverless-framework-for-aws-and-local.md",
-    "posts/serverless-express-api-part-1-getting-started.md",
-    "src/content/blog/serverless-express-api-part-3-production-deployment.md",
     "src/content/blog/serverless-express-api-part-2-development-workflow.md",
-    "src/content/blog/github-actions-secret-setup-using-github-cli.md",
+    "src/content/blog/serverless-express-api-part-1-getting-started.md",
+    "src/content/blog/reset-sequence-of-primary-key-in-postgresql.md",
+    "src/content/blog/python-version-management-with-pyenv.md",
+    "src/content/blog/poetry-updating-a-package-to-a-new-version.md",
+    "src/content/blog/optimize-memory-management-with-dynamic-swap-in-ubuntu.md",
+    "src/content/blog/omniparser-for-pure-vision-based-gui-agent.md",
+    "src/content/blog/notebookllama-an-open-source-version-of-notebooklm.md",
+    "src/content/blog/node-express-api-development-with-serverless-framework-for-aws-and-local.md",
     "src/content/blog/nextjs-conf24-keynotes.md",
-    "src/content/book/the-midnight-library.md",
-    "src/content/book/the-naga-warriors-2-battle-of-gokul-vol-2.md"
+    "src/content/blog/meta-ai-releases-new-quantized-versions-of-llama-3.2(1b-&-3b).md",
+    "src/content/blog/keyboard-mapping-in-linux-with-xmodmap.md",
+    "src/content/blog/github-actions-secret-setup-using-github-cli.md"
   ]
 }
