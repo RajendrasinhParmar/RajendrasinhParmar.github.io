@@ -2,7 +2,7 @@ import type { CollectionEntry } from "astro:content";
 
 export const isDev = import.meta.env.MODE === "development";
 
-export const filterPostByDraft = ({ data }: CollectionEntry<"blog">) => {
+export const filterPostByDraft = ({ data }: CollectionEntry<"posts">) => {
   if (isDev) {
     return true;
   }

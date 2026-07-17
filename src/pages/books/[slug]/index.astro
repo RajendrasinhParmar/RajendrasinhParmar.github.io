@@ -4,7 +4,7 @@ import Books from "@layouts/Books.astro";
 import BookDetails from "@layouts/BookDetails.astro";
 import getPageNumbers from "@utils/getPageNumbers";
 import slugify from "@utils/slugify";
-import { SITE } from "@config";
+import config from "@config";
 import { filterBookByDraft } from "@utils/common";
 import getSortedBooks from "@utils/getSortedBooks";
 export interface Props {
@@ -19,9 +19,11 @@ export async function getStaticPaths() {
     props: { post },
   }));
 
-  const pagePaths = getPageNumbers(posts.length).map(pageNum => ({
-    params: { slug: String(pageNum) },
-  }));
+  const pagePaths = getPageNumbers(posts.length, config.books.perPage).map(
+    pageNum => ({
+      params: { slug: String(pageNum) },
+    })
+  );
 
   return [...postResult, ...pagePaths];
 }
@@ -33,14 +35,14 @@ const books = await getCollection("book", filterBookByDraft);
 
 const sortedBooks = getSortedBooks(books);
 
-const totalPages = getPageNumbers(sortedBooks.length);
+const totalPages = getPageNumbers(sortedBooks.length, config.books.perPage);
 
 const currentPage =
   slug && !isNaN(Number(slug)) && totalPages.includes(Number(slug))
     ? Number(slug)
     : 0;
-const lastPost = currentPage * SITE.postPerPage;
-const startPost = lastPost - SITE.postPerPage;
+const lastPost = currentPage * config.books.perPage;
+const startPost = lastPost - config.books.perPage;
 
 const paginatedBooks = sortedBooks.slice(startPost, lastPost);
 ---

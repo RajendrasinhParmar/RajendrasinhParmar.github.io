@@ -6,15 +6,15 @@ import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
 import Tag from "@components/Tag.astro";
 import getUniqueTags from "@utils/getUniqueTags";
-import { SITE } from "@config";
+import config from "@config";
 
-const posts = await getCollection("blog");
+const posts = await getCollection("posts");
 const books = await getCollection("book");
 
 let tags = getUniqueTags(posts, books);
 ---
 
-<Layout title={`Tags | ${SITE.title}`}>
+<Layout title={`Tags | ${config.site.title}`}>
   <Header activeNav="tags" />
   <Main pageTitle="Tags" pageDesc="All the tags used in posts.">
     <ul>

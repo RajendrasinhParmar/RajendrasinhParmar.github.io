@@ -3,14 +3,14 @@ import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import Tag from "@components/Tag.astro";
-import Datetime from "@components/Datetime";
-import ReadingTime from "@components/ReadingTime";
-import type { CollectionEntry } from "astro:content";
+import Datetime from "@components/Datetime.astro";
+import ReadingTime from "@components/ReadingTime.astro";
+import { render, type CollectionEntry } from "astro:content";
 import { slugifyStr, default as slugify } from "@utils/slugify";
 import { getReadingTime } from "@utils/getReadingTime";
 
 export interface Props {
-  post: CollectionEntry<"blog">;
+  post: CollectionEntry<"posts">;
 }
 
 const { post } = Astro.props;
@@ -18,12 +18,12 @@ const { post } = Astro.props;
 const { title, author, description, ogImage, canonicalURL, pubDatetime, tags } =
   post.data;
 
-const { Content } = await post.render();
-const readingTime = getReadingTime(post.body);
+const { Content } = await render(post);
+const readingTime = getReadingTime(post.body ?? "");
 
 const ogImageUrl = typeof ogImage === "string" ? ogImage : ogImage?.src;
 const ogUrl = new URL(
-  ogImageUrl ?? `/posts/${slugify(post.data)}.png`,
+  ogImageUrl ?? `/posts/${slugify(post.data)}/index.png`,
   Astro.url.origin
 ).href;
 ---
@@ -48,9 +48,14 @@ const ogUrl = new URL(
       </svg><span>Go back</span>
     </button>
   </div>
-  <main id="main-content">
+  <main
+    id="main-content"
+    data-pagefind-body
+    data-pagefind-meta="type:post"
+    data-pagefind-filter="type:post"
+  >
     <h1 transition:name={slugifyStr(title)} class="post-title">{title}</h1>
-    <div class="flex flex-wrap items-center gap-4 my-2">
+    <div class="flex flex-wrap items-center gap-4 my-2" data-pagefind-ignore>
       <Datetime datetime={pubDatetime} size="lg" />
       <ReadingTime minutes={readingTime} size="lg" />
     </div>
@@ -61,7 +66,7 @@ const ogUrl = new URL(
     <ul class="my-8">
       {tags.map(tag => <Tag name={slugifyStr(tag)} />)}
     </ul>
-    <div class="flex justify-end">
+    <div class="flex justify-end" data-pagefind-ignore>
       <button
         id="back-to-top"
         class="focus-outline whitespace-nowrap hover:opacity-75"
@@ -79,6 +84,7 @@ const ogUrl = new URL(
 </Layout>
 
 <style>
+  @reference "../styles/base.css";
   main {
     @apply mx-auto w-full max-w-3xl px-4 pb-12;
   }
@@ -134,8 +140,12 @@ const ogUrl = new URL(
     const container = document.querySelector("#article");
     if (!container) return;
 
-    const mermaidElements = container.querySelectorAll("pre.mermaid");
-    mermaidElements.forEach((pre) => {
+    const mermaidElements = Array.from(
+      container.querySelectorAll("pre.mermaid")
+    ).filter(
+      (element): element is HTMLElement => element instanceof HTMLElement
+    );
+    mermaidElements.forEach(pre => {
       // Wrap each pre.mermaid in a div and store the source
       if (!pre.parentElement?.hasAttribute("data-mermaid-wrapper")) {
         const wrapper = document.createElement("div");
@@ -152,7 +162,7 @@ const ogUrl = new URL(
     if (!container) return;
 
     const wrappers = container.querySelectorAll("[data-mermaid-wrapper]");
-    wrappers.forEach((wrapper) => {
+    wrappers.forEach(wrapper => {
       const source = wrapper.getAttribute("data-mermaid-source");
       if (source) {
         // Replace current content (SVG) with original pre.mermaid
@@ -201,7 +211,11 @@ const ogUrl = new URL(
 
     initializeMermaid();
 
-    const mermaidElements = container.querySelectorAll("pre.mermaid");
+    const mermaidElements = Array.from(
+      container.querySelectorAll("pre.mermaid")
+    ).filter(
+      (element): element is HTMLElement => element instanceof HTMLElement
+    );
     if (mermaidElements.length > 0) {
       mermaid.run({ nodes: mermaidElements });
     }
@@ -220,8 +234,8 @@ const ogUrl = new URL(
   document.addEventListener("astro:page-load", runMermaid);
 
   // Watch for theme changes
-  const themeObserver = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
+  const themeObserver = new MutationObserver(mutations => {
+    mutations.forEach(mutation => {
       if (
         mutation.type === "attributes" &&
         mutation.attributeName === "data-theme"

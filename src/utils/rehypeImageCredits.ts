@@ -51,12 +51,25 @@ export default function rehypeImageCredits() {
           }
         }
 
-        if (
-          imageNode &&
-          imageNode.properties &&
-          imageNode.properties["data-credit"]
-        ) {
+        if (imageNode) {
           commentsToRemove.push({ parent, index });
+
+          if (
+            !imageNode.properties ||
+            typeof imageNode.properties["data-credit"] !== "string"
+          ) {
+            const credit = creditMatch[1].trim();
+            const figure = h("figure", { className: "image-with-credit" }, [
+              h("img", { ...imageNode.properties }),
+              h("figcaption", { className: "image-credit" }, credit),
+            ]);
+
+            nodesToReplace.push({
+              parent,
+              index: index - 1,
+              newNode: figure,
+            });
+          }
         }
       }
 

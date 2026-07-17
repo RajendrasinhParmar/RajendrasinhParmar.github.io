@@ -1,0 +1,47 @@
+---
+import { getReadingTime } from "@utils/getReadingTime";
+import { slugifyStr } from "@utils/slugify";
+import type { CollectionEntry } from "astro:content";
+import Datetime from "./Datetime.astro";
+import ReadingTime from "./ReadingTime.astro";
+
+export interface Props {
+  href?: string;
+  post?: CollectionEntry<"posts" | "book">;
+  frontmatter?: CollectionEntry<"posts" | "book">["data"];
+  secHeading?: boolean;
+}
+
+const { href, post, frontmatter, secHeading = true } = Astro.props;
+
+const data = post?.data || frontmatter;
+const title = data?.title ?? "";
+const pubDatetime = data?.pubDatetime;
+const description = data?.description;
+const readingTime = post?.body ? getReadingTime(post.body) : undefined;
+const Heading = secHeading ? "h2" : "h3";
+---
+
+{
+  data && (
+    <li class="my-6">
+      <a
+        href={href}
+        class="inline-block text-lg font-medium text-skin-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
+      >
+        <Heading
+          transition:name={slugifyStr(title)}
+          class="text-lg font-medium decoration-dashed hover:underline"
+        >
+          {title}
+        </Heading>
+      </a>
+      <div class="flex flex-wrap items-center gap-4">
+        {pubDatetime && <Datetime datetime={pubDatetime} />}
+        {readingTime && <ReadingTime minutes={readingTime} />}
+      </div>
+      <slot />
+      <p>{description}</p>
+    </li>
+  )
+}

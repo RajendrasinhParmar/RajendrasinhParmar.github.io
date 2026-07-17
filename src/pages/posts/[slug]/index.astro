@@ -5,24 +5,26 @@ import PostDetails from "@layouts/PostDetails.astro";
 import getSortedPosts from "@utils/getSortedPosts";
 import getPageNumbers from "@utils/getPageNumbers";
 import slugify from "@utils/slugify";
-import { SITE } from "@config";
+import config from "@config";
 import { filterPostByDraft } from "@utils/common";
 
 export interface Props {
-  post: CollectionEntry<"blog">;
+  post: CollectionEntry<"posts">;
 }
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog", filterPostByDraft);
+  const posts = await getCollection("posts", filterPostByDraft);
 
   const postResult = posts.map(post => ({
     params: { slug: slugify(post.data) },
     props: { post },
   }));
 
-  const pagePaths = getPageNumbers(posts.length).map(pageNum => ({
-    params: { slug: String(pageNum) },
-  }));
+  const pagePaths = getPageNumbers(posts.length, config.posts.perPage).map(
+    pageNum => ({
+      params: { slug: String(pageNum) },
+    })
+  );
 
   return [...postResult, ...pagePaths];
 }
@@ -30,18 +32,18 @@ export async function getStaticPaths() {
 const { slug } = Astro.params;
 const { post } = Astro.props;
 
-const posts = await getCollection("blog");
+const posts = await getCollection("posts");
 
 const sortedPosts = getSortedPosts(posts);
 
-const totalPages = getPageNumbers(sortedPosts.length);
+const totalPages = getPageNumbers(sortedPosts.length, config.posts.perPage);
 
 const currentPage =
   slug && !isNaN(Number(slug)) && totalPages.includes(Number(slug))
     ? Number(slug)
     : 0;
-const lastPost = currentPage * SITE.postPerPage;
-const startPost = lastPost - SITE.postPerPage;
+const lastPost = currentPage * config.posts.perPage;
+const startPost = lastPost - config.posts.perPage;
 
 const paginatedPosts = sortedPosts.slice(startPost, lastPost);
 ---

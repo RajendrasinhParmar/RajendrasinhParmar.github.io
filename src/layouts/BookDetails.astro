@@ -3,9 +3,9 @@ import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import Tag from "@components/Tag.astro";
-import Datetime from "@components/Datetime";
-import ReadingTime from "@components/ReadingTime";
-import type { CollectionEntry } from "astro:content";
+import Datetime from "@components/Datetime.astro";
+import ReadingTime from "@components/ReadingTime.astro";
+import { render, type CollectionEntry } from "astro:content";
 import { slugifyStr, default as slugify } from "@utils/slugify";
 import { getReadingTime } from "@utils/getReadingTime";
 
@@ -15,14 +15,26 @@ export interface Props {
 
 const { book } = Astro.props;
 
-const { title, description, ogImage, canonicalURL, pubDatetime, tags, bookAuthor, rating, status, genre, isbn } = book.data;
+const {
+  title,
+  description,
+  ogImage,
+  canonicalURL,
+  pubDatetime,
+  tags,
+  bookAuthor,
+  rating,
+  status,
+  genre,
+  isbn,
+} = book.data;
 
-const { Content } = await book.render();
-const readingTime = getReadingTime(book.body);
+const { Content } = await render(book);
+const readingTime = getReadingTime(book.body ?? "");
 
 const ogImageUrl = typeof ogImage === "string" ? ogImage : ogImage?.src;
 const ogUrl = new URL(
-  ogImageUrl ?? `/books/${slugify(book.data)}.png`,
+  ogImageUrl ?? `/books/${slugify(book.data)}/index.png`,
   Astro.url.origin
 ).href;
 
@@ -44,34 +56,39 @@ const getRatingStars = (rating: number) => {
       onclick="history.back()"
     >
       <svg xmlns="http://www.w3.org/2000/svg">
-        <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path>
+        <path
+          d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
+        ></path>
       </svg>
       <span>Go back</span>
     </button>
   </div>
-  <main id="main-content">
+  <main
+    id="main-content"
+    data-pagefind-body
+    data-pagefind-meta="type:book"
+    data-pagefind-filter="type:book"
+  >
     <h1 transition:name={slugifyStr(title)} class="post-title">{title}</h1>
-    <div class="flex flex-wrap items-center gap-4 my-2">
+    <div class="flex flex-wrap items-center gap-4 my-2" data-pagefind-ignore>
       <Datetime datetime={pubDatetime} size="lg" />
       <ReadingTime minutes={readingTime} size="lg" />
     </div>
-    
+
     <div class="book-meta-info">
       <p class="book-author">By {bookAuthor}</p>
-      {rating && (
-        <div class="book-rating">
-          <span class="stars">{getRatingStars(rating)}</span>
-          <span class="rating-value">{rating}/5</span>
-        </div>
-      )}
+      {
+        rating && (
+          <div class="book-rating" data-pagefind-ignore>
+            <span class="stars">{getRatingStars(rating)}</span>
+            <span class="rating-value">{rating}/5</span>
+          </div>
+        )
+      }
       <div class="book-details">
         <span class="status">Status: {status}</span>
-        {genre && (
-          <span class="genre">Genres: {genre.join(", ")}</span>
-        )}
-        {isbn && (
-          <span class="isbn">ISBN: {isbn}</span>
-        )}
+        {genre && <span class="genre">Genres: {genre.join(", ")}</span>}
+        {isbn && <span class="isbn">ISBN: {isbn}</span>}
       </div>
     </div>
 
@@ -82,13 +99,15 @@ const getRatingStars = (rating: number) => {
     <ul class="my-8">
       {tags.map(tag => <Tag name={slugifyStr(tag)} />)}
     </ul>
-    <div class="flex justify-end">
+    <div class="flex justify-end" data-pagefind-ignore>
       <button
         id="back-to-top"
         class="focus-outline whitespace-nowrap hover:opacity-75"
       >
         <svg xmlns="http://www.w3.org/2000/svg" class="rotate-90">
-          <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path>
+          <path
+            d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
+          ></path>
         </svg>
         <span>Back to Top</span>
       </button>
@@ -98,6 +117,7 @@ const getRatingStars = (rating: number) => {
 </Layout>
 
 <style>
+  @reference "../styles/base.css";
   main {
     @apply mx-auto w-full max-w-3xl px-4 pb-12;
   }
@@ -122,7 +142,9 @@ const getRatingStars = (rating: number) => {
   .book-details {
     @apply flex flex-wrap gap-4 text-sm;
   }
-  .status, .genre, .isbn {
+  .status,
+  .genre,
+  .isbn {
     @apply text-gray-600 dark:text-gray-400;
   }
 </style>
@@ -134,4 +156,5 @@ const getRatingStars = (rating: number) => {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   });
-</script> 
+</script>
+

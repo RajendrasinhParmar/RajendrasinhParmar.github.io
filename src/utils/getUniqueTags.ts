@@ -3,7 +3,7 @@ import { slugifyStr } from "./slugify";
 import type { CollectionEntry } from "astro:content";
 
 const getUniqueTags = (
-  posts: CollectionEntry<"blog">[] = [],
+  posts: CollectionEntry<"posts">[] = [],
   books: CollectionEntry<"book">[] = []
 ) => {
   const filteredPosts = posts.filter(filterPostByDraft);

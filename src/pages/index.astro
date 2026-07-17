@@ -1,12 +1,12 @@
 ---
-import Card from "@components/Card";
+import Card from "@components/Card.astro";
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import Hr from "@components/Hr.astro";
 import LinkButton from "@components/LinkButton.astro";
 import Socials from "@components/Socials.astro";
 import Tag from "@components/Tag.astro";
-import { SOCIALS } from "@config";
+import config from "@config";
 import Layout from "@layouts/Layout.astro";
 import getSortedBooks from "@utils/getSortedBooks";
 import getSortedPosts from "@utils/getSortedPosts";
@@ -14,14 +14,14 @@ import getUniqueTags from "@utils/getUniqueTags";
 import slugify from "@utils/slugify";
 import { getCollection } from "astro:content";
 
-const posts = await getCollection("blog");
+const posts = await getCollection("posts");
 const books = await getCollection("book");
 
 const sortedPosts = getSortedPosts(posts);
 const sortedBooks = getSortedBooks(books);
 // const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 
-const socialCount = SOCIALS.filter(social => social.active).length;
+const socialCount = config.socials.filter(social => social.active).length;
 
 // Separate tags for posts and books
 const postTags = getUniqueTags(posts);
@@ -40,7 +40,7 @@ const bookTags = getUniqueTags([], books);
         aria-label="rss feed"
         title="RSS Feed"
       >
-      <p class="sr-only">RSS Feed</p>
+        <p class="sr-only">RSS Feed</p>
         <svg xmlns="http://www.w3.org/2000/svg" class="rss-icon"
           ><path
             d="M19 20.001C19 11.729 12.271 5 4 5v2c7.168 0 13 5.832 13 13.001h2z"
@@ -55,8 +55,11 @@ const bookTags = getUniqueTags([], books);
           aria-hidden="true"
           title="India">🇮🇳</span
         ><span class="sr-only">India</span>. I love architecting solutions
-        focused on <em>performance</em>, <em>accessibility</em>, <em>security</em>, and <em>privacy</em>. I am
-        currently treading AI&ML space for <em>generative AI</em> solution development.
+        focused on <em>performance</em>, <em>accessibility</em>, <em
+          >security</em
+        >, and <em>privacy</em>. I am currently treading AI&ML space for <em
+          >generative AI</em
+        > solution development.
       </p>
       {
         // only display if at least one social link is enabled
@@ -79,7 +82,7 @@ const bookTags = getUniqueTags([], books);
             .filter(({ data }) => !data.featured)
             .map(
               (post, index) =>
-                index < 4 && (
+                index < config.posts.perIndex && (
                   <Card
                     href={`/posts/${slugify(post.data)}`}
                     post={post}
@@ -107,17 +110,16 @@ const bookTags = getUniqueTags([], books);
       <h2>Recent Books</h2>
       <ul>
         {
-          sortedBooks
-            .map(
-              (book, index) =>
-                index < 4 && (
-                  <Card
-                    href={`/books/${slugify(book.data)}`}
-                    post={book}
-                    secHeading={false}
-                  />
-                )
-            )
+          sortedBooks.map(
+            (book, index) =>
+              index < config.books.perIndex && (
+                <Card
+                  href={`/books/${slugify(book.data)}`}
+                  post={book}
+                  secHeading={false}
+                />
+              )
+          )
         }
       </ul>
       <div class="all-posts-btn-wrapper">
@@ -135,26 +137,30 @@ const bookTags = getUniqueTags([], books);
     <Hr />
 
     <section id="tags">
-      {postTags.length > 0 && (
-        <div class="tag-section">
-          <h2>Tech Tags</h2>
-          <ul>
-            {postTags.map((tag: string) => (
-              <Tag name={tag} size="sm" />
-            ))}
-          </ul>
-        </div>
-      )}
-      {bookTags.length > 0 && (
-        <div class="tag-section">
-          <h2>Book Tags</h2>
-          <ul>
-            {bookTags.map((tag: string) => (
-              <Tag name={tag} size="sm" />
-            ))}
-          </ul>
-        </div>
-      )}
+      {
+        postTags.length > 0 && (
+          <div class="tag-section">
+            <h2>Tech Tags</h2>
+            <ul>
+              {postTags.map((tag: string) => (
+                <Tag name={tag} size="sm" />
+              ))}
+            </ul>
+          </div>
+        )
+      }
+      {
+        bookTags.length > 0 && (
+          <div class="tag-section">
+            <h2>Book Tags</h2>
+            <ul>
+              {bookTags.map((tag: string) => (
+                <Tag name={tag} size="sm" />
+              ))}
+            </ul>
+          </div>
+        )
+      }
     </section>
   </main>
 
@@ -162,6 +168,7 @@ const bookTags = getUniqueTags([], books);
 </Layout>
 
 <style>
+  @reference "../styles/base.css";
   /* ===== Hero Section ===== */
   #hero {
     @apply py-6;
@@ -212,7 +219,7 @@ const bookTags = getUniqueTags([], books);
     @apply mb-0;
   }
   .tag-section h2 {
-    @apply text-lg font-semibold mb-3;
+    @apply mb-3 text-lg font-semibold;
   }
   .tag-section ul {
     @apply flex flex-wrap gap-2;

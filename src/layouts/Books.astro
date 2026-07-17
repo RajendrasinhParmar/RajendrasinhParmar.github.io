@@ -1,9 +1,9 @@
 ---
-import Card from "@components/Card";
+import Card from "@components/Card.astro";
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import LinkButton from "@components/LinkButton.astro";
-import { SITE } from "@config";
+import config from "@config";
 import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
 import slugify from "@utils/slugify";
@@ -38,35 +38,31 @@ const getRatingStars = (rating: number) => {
 };
 ---
 
-<Layout title={`Books | ${SITE.title}`}>
+<Layout title={`Books | ${config.site.title}`}>
   <Header activeNav="books" />
   <Main pageTitle="Books" pageDesc="My reading journey and book reviews.">
     <ul>
       {
-        books.map((book) => (
-          <li class="mb-6">
-            <Card href={`/books/${slugify(book.data)}`} post={book}>
-              <div class="book-details">
-                <p class="book-author">By {book.data.bookAuthor}</p>
-                {book.data.rating && (
-                  <div class="book-rating">
-                    <span class="stars">{getRatingStars(book.data.rating)}</span>
-                    <span class="rating-value">{book.data.rating}/5</span>
-                  </div>
-                )}
-                <div class="book-meta">
-                  <span class={`status ${getStatusColor(book.data.status)}`}>
-                    {book.data.status}
-                  </span>
-                  {book.data.genre && (
-                    <span class="genre">
-                      {book.data.genre.join(", ")}
-                    </span>
-                  )}
+        books.map(book => (
+          <Card href={`/books/${slugify(book.data)}`} post={book}>
+            <div class="book-details">
+              <p class="book-author">By {book.data.bookAuthor}</p>
+              {book.data.rating && (
+                <div class="book-rating">
+                  <span class="stars">{getRatingStars(book.data.rating)}</span>
+                  <span class="rating-value">{book.data.rating}/5</span>
                 </div>
+              )}
+              <div class="book-meta">
+                <span class={`status ${getStatusColor(book.data.status)}`}>
+                  {book.data.status}
+                </span>
+                {book.data.genre && (
+                  <span class="genre">{book.data.genre.join(", ")}</span>
+                )}
               </div>
-            </Card>
-          </li>
+            </div>
+          </Card>
         ))
       }
     </ul>
@@ -104,23 +100,25 @@ const getRatingStars = (rating: number) => {
 </Layout>
 
 <style>
+  @reference "../styles/base.css";
   .pagination-wrapper {
     @apply mb-8 mt-auto flex justify-center;
   }
-  .disabled {
+  /* .disabled/.disabled-svg live on the LinkButton child component — must be :global */
+  .pagination-wrapper :global(.disabled) {
     @apply pointer-events-none select-none opacity-50 hover:text-skin-base group-hover:fill-skin-base;
   }
-  .disabled-svg {
+  .pagination-wrapper :global(.disabled-svg) {
     @apply group-hover:!fill-skin-base;
   }
   .book-details {
     @apply mt-2;
   }
   .book-author {
-    @apply text-sm text-gray-600 dark:text-gray-400 mb-2;
+    @apply mb-2 text-sm text-gray-600 dark:text-gray-400;
   }
   .book-rating {
-    @apply flex items-center gap-2 mb-2;
+    @apply mb-2 flex items-center gap-2;
   }
   .stars {
     @apply text-yellow-500;

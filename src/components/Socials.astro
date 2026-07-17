@@ -1,5 +1,5 @@
 ---
-import { SOCIALS } from "@config";
+import config from "@config";
 import LinkButton from "./LinkButton.astro";
 import socialIcons from "@assets/socialIcons";
 
@@ -12,24 +12,29 @@ const { centered = false } = Astro.props;
 
 <div class={`social-icons ${centered ? "flex" : ""}`}>
   {
-    SOCIALS.filter(social => social.active).map(social => (
-      <LinkButton
-        href={social.href}
-        className="link-button"
-        title={social.linkTitle}
-        openInNewTab={true}
-      >
-        <Fragment set:html={socialIcons[social.name]} />
-      </LinkButton>
-    ))
+    config.socials
+      .filter(social => social.active)
+      .map(social => (
+        <LinkButton
+          href={social.href}
+          className="link-button"
+          title={social.linkTitle}
+          openInNewTab={true}
+        >
+          <Fragment set:html={socialIcons[social.name]} />
+        </LinkButton>
+      ))
   }
 </div>
 
 <style>
+  @reference "../styles/base.css";
   .social-icons {
     @apply flex-wrap justify-center gap-1;
   }
-  .link-button {
+  /* .link-button lives on the LinkButton child component, which doesn't
+     receive this component's scope class — must be :global */
+  .social-icons :global(.link-button) {
     @apply p-2 hover:rotate-6 sm:p-1;
   }
 </style>

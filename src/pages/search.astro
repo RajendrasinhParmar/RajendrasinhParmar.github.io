@@ -1,38 +1,139 @@
 ---
-import { getCollection } from "astro:content";
-import { SITE } from "@config";
+import "@pagefind/default-ui/css/ui.css";
+import config from "@config";
 import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import SearchBar from "@components/Search";
-import { filterPostByDraft, filterBookByDraft } from "@utils/common";
 
-// Retrieve all articles
-const posts = await getCollection("blog", filterPostByDraft);
-
-// List of items to search in
-const postsSearchList = posts.map(({ data }) => ({
-  title: data.title,
-  description: data.description,
-  data,
-}));
-
-const books = await getCollection("book", filterBookByDraft);
-
-const booksSearchList = books.map(({ data }) => ({
-  title: data.title,
-  description: data.description,
-  data,
-}));
-
-const searchList = [...postsSearchList, ...booksSearchList];
+const pagefindBundlePath = "/pagefind/";
 ---
 
-<Layout title={`Search | ${SITE.title}`}>
+<Layout title={`Search | ${config.site.title}`}>
   <Header activeNav="search" />
   <Main pageTitle="Search" pageDesc="Search any article ...">
-    <SearchBar client:load searchList={searchList} />
+    <div
+      id="pagefind-search"
+      transition:persist
+      data-bundle-path={pagefindBundlePath}
+    >
+    </div>
   </Main>
   <Footer />
 </Layout>
+
+<script>
+  function initSearch() {
+    const pageFindSearch: HTMLElement | null =
+      document.querySelector("#pagefind-search");
+
+    if (!pageFindSearch) return;
+
+    const bundlePath = pageFindSearch.dataset?.bundlePath;
+    if (!bundlePath) return;
+
+    // Already initialized (e.g. after ClientRouter swap with transition:persist)
+    if (pageFindSearch.querySelector("form")) return;
+
+    const params = new URLSearchParams(window.location.search);
+
+    const onIdle = window.requestIdleCallback || (cb => setTimeout(cb, 1));
+
+    onIdle(async () => {
+      // @ts-expect-error — Missing types for @pagefind/default-ui package.
+      const { PagefindUI } = await import("@pagefind/default-ui");
+
+      if (import.meta.env.DEV) {
+        pageFindSearch.innerHTML = `
+            <div class="mb-4 space-y-4 rounded-sm border border-skin-line bg-skin-card/50 p-4">
+              <p><strong>DEV mode:</strong> Build the project at least once to see search results during development.</p>
+              <code class="block rounded-sm bg-skin-card px-2 py-1">pnpm run build</code>
+            </div>
+          `;
+      }
+
+      const search = new PagefindUI({
+        element: "#pagefind-search",
+        bundlePath,
+        showImages: false,
+        showSubResults: true,
+        processTerm: function (term: string) {
+          params.set("q", term);
+          history.replaceState(history.state, "", "?" + params.toString());
+          return term;
+        },
+      });
+
+      const query = params.get("q");
+      if (query) {
+        search.triggerSearch(query);
+      }
+
+      const searchInput = document.querySelector(".pagefind-ui__search-input");
+      const clearButton = document.querySelector(".pagefind-ui__search-clear");
+      searchInput?.addEventListener("input", resetSearchParam);
+      clearButton?.addEventListener("click", resetSearchParam);
+
+      function resetSearchParam(e: Event) {
+        if ((e.target as HTMLInputElement)?.value.trim() === "") {
+          history.replaceState(history.state, "", window.location.pathname);
+        }
+      }
+    });
+  }
+
+  document.addEventListener("astro:after-swap", initSearch);
+  initSearch();
+</script>
+
+<style is:global>
+  #pagefind-search {
+    --pagefind-ui-font: var(--font-mono);
+    --pagefind-ui-text: rgb(var(--color-text-base));
+    --pagefind-ui-background: rgb(var(--color-fill));
+    --pagefind-ui-border: rgb(var(--color-border));
+    --pagefind-ui-primary: rgb(var(--color-accent));
+    --pagefind-ui-tag: rgb(var(--color-fill));
+    --pagefind-ui-border-radius: 0.125rem;
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-image-border-radius: 0.125rem;
+    --pagefind-ui-image-box-ratio: 3 / 2;
+
+    form::before {
+      background-color: rgb(var(--color-text-base));
+    }
+
+    input {
+      font-weight: 400;
+      border: 1px solid rgb(var(--color-border) / 0.4);
+    }
+
+    input:focus-visible {
+      outline: 1px solid rgb(var(--color-accent));
+      border-color: rgb(var(--color-accent));
+    }
+
+    .pagefind-ui__result-title a {
+      color: rgb(var(--color-accent));
+      outline-offset: 1px;
+      outline-color: rgb(var(--color-accent));
+      text-decoration-style: dashed;
+      text-underline-offset: 4px;
+    }
+
+    .pagefind-ui__result-title a:focus-visible,
+    .pagefind-ui__search-clear:focus-visible {
+      text-decoration-line: none;
+      outline-width: 2px;
+      outline-style: dashed;
+    }
+
+    .pagefind-ui__result:last-of-type {
+      border-bottom: 0;
+    }
+
+    .pagefind-ui__result-nested .pagefind-ui__result-link:before {
+      font-family: system-ui;
+    }
+  }
+</style>

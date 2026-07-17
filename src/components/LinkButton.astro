@@ -8,7 +8,14 @@ export interface Props {
   openInNewTab?: boolean;
 }
 
-const { href, className, ariaLabel, title, disabled = false, openInNewTab = false } = Astro.props;
+const {
+  href,
+  className,
+  ariaLabel,
+  title,
+  disabled = false,
+  openInNewTab = false,
+} = Astro.props;
 ---
 
 <a
@@ -17,12 +24,13 @@ const { href, className, ariaLabel, title, disabled = false, openInNewTab = fals
   aria-label={ariaLabel}
   title={title}
   aria-disabled={disabled}
-  target={openInNewTab ? "_blank": ""}
+  target={openInNewTab ? "_blank" : ""}
 >
   <slot /><p class="sr-only">{title}</p>
 </a>
 
 <style>
+  @reference "../styles/base.css";
   a {
     @apply hover:text-skin-accent;
   }
