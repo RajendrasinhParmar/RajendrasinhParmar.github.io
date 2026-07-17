@@ -1,5 +1,8 @@
 {
-    "*.{js,jsx,ts,tsx,md,mdx,json}": [
-        "prettier --write --plugin=prettier-plugin-astro --plugin=prettier-plugin-tailwindcss"
-      ]
+  "*.{js,jsx,ts,tsx,md,mdx,json}": [
+    "prettier --write --plugin=prettier-plugin-astro"
+  ],
+  "*.{css,astro}": [
+    "prettier --write --plugin=prettier-plugin-astro --plugin=prettier-plugin-tailwindcss"
+  ]
 }

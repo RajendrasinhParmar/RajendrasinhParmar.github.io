@@ -1,12 +1,17 @@
-import { SITE } from "@config";
-import { defineCollection, z } from "astro:content";
+import config from "@config";
+import { defineCollection } from "astro:content";
+import { glob } from "astro/loaders";
+import { z } from "astro/zod";
 
-const blog = defineCollection({
-  type: "content",
+export const POSTS_PATH = "src/content/posts";
+
+const posts = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: `./${POSTS_PATH}` }),
   schema: ({ image }) =>
     z.object({
-      author: z.string().default(SITE.author),
+      author: z.string().default(config.site.author),
       pubDatetime: z.date(),
+      modDatetime: z.date().optional().nullable(),
       title: z.string(),
       postSlug: z.string().optional(),
       featured: z.boolean().optional(),
@@ -24,7 +29,7 @@ const blog = defineCollection({
 });
 
 const book = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/book" }),
   schema: ({ image }) =>
     z.object({
       pubDatetime: z.date(),
@@ -48,4 +53,5 @@ const book = defineCollection({
       canonicalURL: z.string().optional(),
     }),
 });
-export const collections = { blog, book };
+
+export const collections = { posts, book };
