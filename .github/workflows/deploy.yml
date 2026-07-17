@@ -20,13 +20,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Install, build, and upload your site
-        uses: withastro/action@v2
+        uses: withastro/action@v6
         with:
           path: . # The root location of your Astro project inside the repository
-          node-version: 20 # Using Node.js 20 for better compatibility
-          package-manager: npm # Using npm as the package manager
+          node-version: 24
+          # package-manager omitted: auto-detected from pnpm-lock.yaml, using the
+          # pnpm version pinned in package.json's "packageManager" field
 
   deploy:
     needs: build
@@ -37,4 +38,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
