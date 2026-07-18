@@ -4,17 +4,31 @@
     "type": "split",
     "children": [
       {
-        "id": "c36df0494ab781b0",
+        "id": "8667d46909b77b7b",
         "type": "tabs",
         "children": [
           {
-            "id": "037c3f0d0c01d380",
+            "id": "cd9437f0d4ab91a1",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "src/content/blog/context-firewalls-keeping-your-ai-agents-in-the-smart-zone.md",
+                "mode": "preview",
+                "source": true,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "context-firewalls-keeping-your-ai-agents-in-the-smart-zone"
             }
           }
         ]
@@ -158,8 +172,15 @@
       "hide-folders:Show hidden folders": false
     }
   },
-  "active": "037c3f0d0c01d380",
+  "active": "cd9437f0d4ab91a1",
   "lastOpenFiles": [
+    "src/content/blog/context-managers-in-python.md",
+    "src/content/blog/context-firewalls-keeping-your-ai-agents-in-the-smart-zone.md",
+    "src/content/blog/context-firewalls-keeping-your-ai-agents-in-the-smart-zone.md",
+    "obsidian-templates/post.md",
+    "src/assets/images/AI_Context_Firewall.png",
+    "src/assets/images/Unconfirmed 559404.crdownload",
+    "src/content/Untitled.md",
     "dist/_astro/VoiceAgents.Do6gSAOC_VocTj@808w.webp",
     "dist/_astro/VoiceAgents.Do6gSAOC_VocTj@1108w.webp",
     "dist/_astro/serverless_banner.BEpXbdmP_29r81r@837w.webp",
@@ -169,8 +190,6 @@
     "dist/_astro/serverless_banner.BEpXbdmP_29r81r@2037w.webp",
     "dist/_astro/serverless_banner.BEpXbdmP_29r81r@2337w.webp",
     "dist/_astro/llama_3.2_quantized.2Q4wIuQv_Z1Q8LtE@1020w.webp",
-    "dist/_astro/llama_3.2_quantized.2Q4wIuQv_Z1Q8LtE@1320w.webp",
-    "dist/_astro/llama_3.2_quantized.2Q4wIuQv_Z1Q8LtE@1620w.webp",
     "dist/_jampack",
     "dist/sitemap-0.xml",
     "dist/sitemap-index.xml",
@@ -180,7 +199,6 @@
     "dist/tags/wasm",
     "dist/tags/voiceagents/index.html",
     "dist/tags/voiceagents",
-    "dist/tags/ubuntu/index.html",
     "src/content/blog/niyatva-the-name-and-the-logo.md",
     "src/content/blog/moving-beyond-vibe-coding-the-era-of-ai-harness-engineering.md",
     "src/content/blog/System_Architecture_Diagram.md",
@@ -201,10 +219,6 @@
     "src/content/blog/optimize-memory-management-with-dynamic-swap-in-ubuntu.md",
     "src/content/blog/omniparser-for-pure-vision-based-gui-agent.md",
     "src/content/blog/notebookllama-an-open-source-version-of-notebooklm.md",
-    "src/content/blog/node-express-api-development-with-serverless-framework-for-aws-and-local.md",
-    "src/content/blog/nextjs-conf24-keynotes.md",
-    "src/content/blog/meta-ai-releases-new-quantized-versions-of-llama-3.2(1b-&-3b).md",
-    "src/content/blog/keyboard-mapping-in-linux-with-xmodmap.md",
-    "src/content/blog/github-actions-secret-setup-using-github-cli.md"
+    "src/content/blog/node-express-api-development-with-serverless-framework-for-aws-and-local.md"
   ]
 }
